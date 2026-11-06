@@ -1,0 +1,50 @@
+ 
+****************************************
+Report : area
+Design : keccak
+Version: W-2024.09-SP5-4
+Date   : Tue Nov  3 19:06:30 2026
+****************************************
+
+Library(s) Used:
+
+    saed32rvt_ss0p75v125c (File: /usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_rvt/db_nldm/saed32rvt_ss0p75v125c.db)
+    saed32lvt_ss0p75v125c (File: /usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p75v125c.db)
+    saed32hvt_ss0p75v125c (File: /usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75v125c.db)
+
+Number of ports:                         7015
+Number of nets:                         29863
+Number of cells:                        24114
+Number of combinational cells:          21875
+Number of sequential cells:              2212
+Number of macros/black boxes:               0
+Number of buf/inv:                       3524
+Number of references:                       8
+
+Combinational area:              86687.755593
+Buf/Inv area:                     4592.636243
+Noncombinational area:           14625.479390
+Macro/Black Box area:                0.000000
+Net Interconnect area:           24696.996307
+
+Total cell area:                101313.234983
+Total area:                     126010.231290
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area             Local cell area
+                                  --------------------  ------------------------------ 
+Hierarchical cell                 Absolute     Percent  Combi-      Noncombi-   Black-
+                                  Total        Total    national    national    boxes   Design
+--------------------------------  -----------  -------  ----------  ----------  ------  -------------
+keccak                            101313.2350    100.0      8.8950     91.4918  0.0000  keccak
+f_permutation_                     95084.6737     93.9   7797.1379  10653.2085  0.0000  f_permutation
+f_permutation_/rconst_                56.4200      0.1     56.4200      0.0000  0.0000  rconst2in1
+f_permutation_/round_              76577.9073     75.6  76577.9073      0.0000  0.0000  round2in1
+padder_                             6128.1744      6.0   2063.6492   3880.7790  0.0000  padder
+padder_/p0                           183.7461      0.2    183.7461      0.0000  0.0000  padder1
+--------------------------------  -----------  -------  ----------  ----------  ------  -------------
+Total                                                   86687.7556  14625.4794  0.0000
+
+1

@@ -1,0 +1,23 @@
+ 
+****************************************
+Report : constraint
+        -all_violators
+Design : keccak
+Version: W-2024.09-SP5-4
+Date   : Tue Nov  3 19:35:13 2026
+****************************************
+
+
+   max_transition
+
+                             Required        Actual
+   Net                      Transition     Transition        Slack
+   -----------------------------------------------------------------
+   f_permutation_/n179          0.11           0.12          -0.01  (VIOLATED)
+       PIN :   f_permutation_/out_reg_909_/Q
+                                0.11           0.12          -0.01  (VIOLATED)
+
+   -----------------------------------------------------------------
+   Total                      1                  -0.01  
+
+1

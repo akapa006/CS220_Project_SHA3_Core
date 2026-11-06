@@ -1,0 +1,52 @@
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : keccak
+Version: W-2024.09-SP5-4
+Date   : Mon Nov  2 13:48:48 2026
+****************************************
+
+
+Library(s) Used:
+
+    saed32rvt_tt0p78v25c (File: /usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_rvt/db_nldm/saed32rvt_tt0p78v25c.db)
+
+
+Operating Conditions: tt0p78v25c   Library: saed32rvt_tt0p78v25c
+Wire Load Model Mode: enclosed
+
+Design        Wire Load Model            Library
+------------------------------------------------
+keccak                 140000            saed32rvt_tt0p78v25c
+padder                 8000              saed32rvt_tt0p78v25c
+f_permutation          70000             saed32rvt_tt0p78v25c
+padder1                ForQA             saed32rvt_tt0p78v25c
+rconst2in1             ForQA             saed32rvt_tt0p78v25c
+round2in1              70000             saed32rvt_tt0p78v25c
+
+
+Global Operating Voltage = 0.78 
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+keccak                                  189.064 1.34e+03 1.21e+09 2.74e+03 100.0
+  f_permutation_ (f_permutation)        185.823 1.12e+03 1.10e+09 2.41e+03  87.9
+    round_ (round2in1)                  164.937  495.836 7.72e+08 1.43e+03  52.3
+    rconst_ (rconst2in1)               7.64e-02 6.36e-02 4.45e+05    0.585   0.0
+  padder_ (padder)                        3.208  217.480 1.03e+08  324.137  11.8
+    p0 (padder1)                          0.267    0.507 1.81e+06    2.581   0.1
+1

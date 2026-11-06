@@ -1,0 +1,16 @@
+# DC scratch
+syn/WORK/
+syn/alib-*/
+syn/*.svf
+syn/command.log
+syn/*.pvl
+syn/*.syn
+syn/*.mr
+# VCS outputs
+csrc/
+simv
+simv.daidir/
+ucli.key
+*.vpd
+*.fsdb
+*.vcd

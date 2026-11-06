@@ -1,0 +1,89 @@
+ 
+****************************************
+Report : constraint
+        -all_violators
+Design : keccak
+Version: W-2024.09-SP5-4
+Date   : Tue Nov  3 18:51:27 2026
+****************************************
+
+
+   min_delay/hold ('clk' group)
+
+                             Required        Actual
+   Endpoint                 Path Delay     Path Delay        Slack
+   -----------------------------------------------------------------
+   padder_/out_reg_76_/D        0.35           0.28 f        -0.08  (VIOLATED)
+   padder_/out_reg_83_/D        0.35           0.28 f        -0.08  (VIOLATED)
+   padder_/out_reg_106_/D       0.35           0.28 f        -0.08  (VIOLATED)
+   padder_/out_reg_111_/D       0.35           0.28 f        -0.08  (VIOLATED)
+   padder_/out_reg_331_/D       0.35           0.28 f        -0.07  (VIOLATED)
+   padder_/out_reg_134_/D       0.35           0.28 f        -0.07  (VIOLATED)
+   padder_/out_reg_150_/D       0.35           0.28 f        -0.07  (VIOLATED)
+   padder_/out_reg_154_/D       0.35           0.28 f        -0.07  (VIOLATED)
+   padder_/out_reg_186_/D       0.35           0.28 f        -0.07  (VIOLATED)
+   padder_/out_reg_195_/D       0.35           0.28 f        -0.07  (VIOLATED)
+   padder_/out_reg_199_/D       0.35           0.28 f        -0.07  (VIOLATED)
+   padder_/out_reg_209_/D       0.35           0.28 f        -0.07  (VIOLATED)
+   padder_/out_reg_229_/D       0.35           0.28 f        -0.07  (VIOLATED)
+   padder_/out_reg_230_/D       0.35           0.28 f        -0.07  (VIOLATED)
+   padder_/out_reg_236_/D       0.35           0.28 f        -0.07  (VIOLATED)
+   padder_/out_reg_242_/D       0.35           0.28 f        -0.07  (VIOLATED)
+   padder_/out_reg_257_/D       0.35           0.28 f        -0.07  (VIOLATED)
+   padder_/out_reg_266_/D       0.35           0.28 f        -0.07  (VIOLATED)
+   padder_/out_reg_274_/D       0.35           0.28 f        -0.07  (VIOLATED)
+   padder_/out_reg_307_/D       0.35           0.28 f        -0.07  (VIOLATED)
+   padder_/out_reg_325_/D       0.35           0.28 f        -0.07  (VIOLATED)
+   padder_/out_reg_358_/D       0.35           0.28 f        -0.07  (VIOLATED)
+   padder_/out_reg_362_/D       0.35           0.28 f        -0.07  (VIOLATED)
+   padder_/out_reg_366_/D       0.35           0.28 f        -0.07  (VIOLATED)
+   padder_/out_reg_378_/D       0.35           0.28 f        -0.07  (VIOLATED)
+   padder_/out_reg_390_/D       0.35           0.28 f        -0.07  (VIOLATED)
+   padder_/out_reg_391_/D       0.35           0.28 f        -0.07  (VIOLATED)
+   padder_/out_reg_408_/D       0.35           0.28 f        -0.07  (VIOLATED)
+   padder_/out_reg_415_/D       0.35           0.28 f        -0.07  (VIOLATED)
+   padder_/out_reg_450_/D       0.35           0.28 f        -0.07  (VIOLATED)
+   padder_/out_reg_456_/D       0.35           0.28 f        -0.07  (VIOLATED)
+   padder_/out_reg_473_/D       0.35           0.28 f        -0.07  (VIOLATED)
+   padder_/out_reg_476_/D       0.35           0.28 f        -0.07  (VIOLATED)
+   padder_/out_reg_495_/D       0.35           0.28 f        -0.07  (VIOLATED)
+   padder_/out_reg_499_/D       0.35           0.28 f        -0.07  (VIOLATED)
+   padder_/out_reg_503_/D       0.35           0.28 f        -0.07  (VIOLATED)
+   padder_/out_reg_515_/D       0.35           0.28 f        -0.07  (VIOLATED)
+   padder_/out_reg_524_/D       0.35           0.28 f        -0.07  (VIOLATED)
+   padder_/out_reg_529_/D       0.35           0.28 f        -0.07  (VIOLATED)
+   padder_/out_reg_553_/D       0.35           0.28 f        -0.07  (VIOLATED)
+
+
+   max_capacitance
+
+                             Required        Actual
+   Net                      Capacitance    Capacitance       Slack
+   -----------------------------------------------------------------
+   f_permutation_/round_/n12991
+                               16.00          18.52          -2.52  (VIOLATED)
+   f_permutation_/round_/n9722
+                               16.00          17.19          -1.19  (VIOLATED)
+   f_permutation_/round_/n11902
+                               16.00          17.01          -1.01  (VIOLATED)
+   f_permutation_/round_/n8325
+                               16.00          16.70          -0.70  (VIOLATED)
+   f_permutation_/round_/n12354
+                               16.00          16.32          -0.32  (VIOLATED)
+   f_permutation_/round_/n15409
+                               16.00          16.25          -0.25  (VIOLATED)
+   f_permutation_/round_/n8950
+                               16.00          16.24          -0.24  (VIOLATED)
+   f_permutation_/round_/n15695
+                                8.00           8.18          -0.18  (VIOLATED)
+   f_permutation_/round_/n12028
+                               16.00          16.18          -0.18  (VIOLATED)
+   f_permutation_/round_/n14229
+                               16.00          16.08          -0.08  (VIOLATED)
+   f_permutation_/round_/n13487
+                               16.00          16.08          -0.08  (VIOLATED)
+
+   -----------------------------------------------------------------
+   Total                      11                 -6.74  
+
+1

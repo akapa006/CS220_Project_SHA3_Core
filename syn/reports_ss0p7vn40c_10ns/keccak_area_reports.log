@@ -1,0 +1,48 @@
+ 
+****************************************
+Report : area
+Design : keccak
+Version: W-2024.09-SP5-4
+Date   : Mon Nov  2 13:48:44 2026
+****************************************
+
+Library(s) Used:
+
+    saed32rvt_tt0p78v25c (File: /usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_rvt/db_nldm/saed32rvt_tt0p78v25c.db)
+
+Number of ports:                         7015
+Number of nets:                         28104
+Number of cells:                        22424
+Number of combinational cells:          20207
+Number of sequential cells:              2212
+Number of macros/black boxes:               0
+Number of buf/inv:                       4051
+Number of references:                       8
+
+Combinational area:              56509.427122
+Buf/Inv area:                     5291.278117
+Noncombinational area:           14616.330208
+Macro/Black Box area:                0.000000
+Net Interconnect area:           20416.208387
+
+Total cell area:                 71125.757330
+Total area:                      91541.965717
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area            Local cell area
+                                  -------------------  ------------------------------ 
+Hierarchical cell                 Absolute    Percent  Combi-      Noncombi-   Black-
+                                  Total       Total    national    national    boxes   Design
+--------------------------------  ----------  -------  ----------  ----------  ------  -------------
+keccak                            71125.7573    100.0     32.2763     85.9007  0.0000  keccak
+f_permutation_                    65374.9867     91.9   7230.9052  10651.6837  0.0000  f_permutation
+f_permutation_/rconst_               56.6741      0.1     56.6741      0.0000  0.0000  rconst2in1
+f_permutation_/round_             47435.7238     66.7  47435.7238      0.0000  0.0000  round2in1
+padder_                            5632.5936      7.9   1617.8807   3878.7459  0.0000  padder
+padder_/p0                          135.9670      0.2    135.9670      0.0000  0.0000  padder1
+--------------------------------  ----------  -------  ----------  ----------  ------  -------------
+Total                                                  56509.4271  14616.3302  0.0000
+
+1

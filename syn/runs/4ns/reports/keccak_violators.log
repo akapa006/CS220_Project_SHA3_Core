@@ -1,0 +1,23 @@
+ 
+****************************************
+Report : constraint
+        -all_violators
+Design : keccak
+Version: W-2024.09-SP5-4
+Date   : Tue Nov  3 19:06:33 2026
+****************************************
+
+
+   max_capacitance
+
+                             Required        Actual
+   Net                      Capacitance    Capacitance       Slack
+   -----------------------------------------------------------------
+   f_permutation_/n1898        64.00          81.09         -17.09  (VIOLATED)
+   f_permutation_/n1905        64.00          64.92          -0.92  (VIOLATED)
+   padder_/p0/n32               8.00           8.11          -0.11  (VIOLATED)
+
+   -----------------------------------------------------------------
+   Total                      3                 -18.12  
+
+1

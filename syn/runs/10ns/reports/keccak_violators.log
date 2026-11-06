@@ -1,0 +1,47 @@
+ 
+****************************************
+Report : constraint
+        -all_violators
+Design : keccak
+Version: W-2024.09-SP5-4
+Date   : Tue Nov  3 17:55:42 2026
+****************************************
+
+
+   max_transition
+
+                             Required        Actual
+   Net                      Transition     Transition        Slack
+   -----------------------------------------------------------------
+   f_permutation_/n1254         0.25           0.40          -0.16  (VIOLATED)
+       PIN :   f_permutation_/U771/Y
+                                0.25           0.40          -0.16  (VIOLATED)
+   f_permutation_/round_/n15050
+                                0.27           0.29          -0.02  (VIOLATED)
+       PIN :   f_permutation_/round_/U11421/Y
+                                0.27           0.29          -0.02  (VIOLATED)
+   f_permutation_/round_/n14357
+                                0.27           0.28          -0.02  (VIOLATED)
+       PIN :   f_permutation_/round_/U14723/Y
+                                0.27           0.28          -0.02  (VIOLATED)
+   f_permutation_/round_/n15164
+                                0.27           0.28          -0.01  (VIOLATED)
+       PIN :   f_permutation_/round_/U15319/Y
+                                0.27           0.28          -0.01  (VIOLATED)
+   f_permutation_/n179          0.11           0.11           0.00  (VIOLATED: increase significant digits)
+
+   -----------------------------------------------------------------
+   Total                      5                  -0.20  
+
+   max_capacitance
+
+                             Required        Actual
+   Net                      Capacitance    Capacitance       Slack
+   -----------------------------------------------------------------
+   f_permutation_/n1197        16.00          27.08         -11.08  (VIOLATED)
+   f_permutation_/n1254         8.00          18.44         -10.44  (VIOLATED)
+
+   -----------------------------------------------------------------
+   Total                      2                 -21.52  
+
+1

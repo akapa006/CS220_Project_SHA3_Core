@@ -1,0 +1,63 @@
+ 
+****************************************
+Report : constraint
+        -all_violators
+Design : keccak
+Version: W-2024.09-SP5-4
+Date   : Tue Nov  3 18:39:13 2026
+****************************************
+
+
+   min_delay/hold ('clk' group)
+
+                             Required        Actual
+   Endpoint                 Path Delay     Path Delay        Slack
+   -----------------------------------------------------------------
+   padder_/out_reg_97_/D        0.35           0.28 f        -0.08  (VIOLATED)
+   padder_/out_reg_113_/D       0.35           0.28 f        -0.08  (VIOLATED)
+   padder_/out_reg_352_/D       0.35           0.28 f        -0.07  (VIOLATED)
+
+
+   max_transition
+
+                             Required        Actual
+   Net                      Transition     Transition        Slack
+   -----------------------------------------------------------------
+   f_permutation_/n1174         0.27           0.35          -0.08  (VIOLATED)
+       PIN :   f_permutation_/U209/Y
+                                0.27           0.35          -0.08  (VIOLATED)
+
+   -----------------------------------------------------------------
+   Total                      1                  -0.08  
+
+   max_capacitance
+
+                             Required        Actual
+   Net                      Capacitance    Capacitance       Slack
+   -----------------------------------------------------------------
+   f_permutation_/n1174        16.00          30.08         -14.08  (VIOLATED)
+   f_permutation_/round_/n9125
+                               16.00          17.00          -1.00  (VIOLATED)
+   f_permutation_/round_/n15042
+                               16.00          16.70          -0.70  (VIOLATED)
+   f_permutation_/round_/n13200
+                                8.00           8.65          -0.65  (VIOLATED)
+   f_permutation_/round_/n9311
+                               16.00          16.46          -0.46  (VIOLATED)
+   f_permutation_/round_/n11805
+                               16.00          16.42          -0.42  (VIOLATED)
+   f_permutation_/round_/n7469
+                               16.00          16.36          -0.36  (VIOLATED)
+   f_permutation_/round_/n10006
+                               16.00          16.30          -0.30  (VIOLATED)
+   f_permutation_/round_/n8895
+                               16.00          16.16          -0.16  (VIOLATED)
+   f_permutation_/round_/n10489
+                               16.00          16.14          -0.14  (VIOLATED)
+   f_permutation_/round_/n15328
+                               16.00          16.11          -0.11  (VIOLATED)
+
+   -----------------------------------------------------------------
+   Total                      11                -18.39  
+
+1

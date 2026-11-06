@@ -1,0 +1,87 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nets
+        -max_paths 1
+        -transition_time
+Design : keccak
+Version: W-2024.09-SP5-4
+Date   : Tue Nov  3 18:26:21 2026
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: ss0p75v125c   Library: saed32hvt_ss0p75v125c
+Wire Load Model Mode: enclosed
+
+  Startpoint: f_permutation_/out_reg_598_
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: f_permutation_/out_reg_401_
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  keccak             140000                saed32hvt_ss0p75v125c
+  f_permutation      140000                saed32hvt_ss0p75v125c
+  round2in1          70000                 saed32hvt_ss0p75v125c
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout     Trans      Incr       Path      Attributes
+  ---------------------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                             0.00       0.00
+  clock network delay (ideal)                                       0.00       0.00
+  f_permutation_/out_reg_598_/CLK (DFFX1_HVT)             0.00      0.00 #     0.00 r
+  f_permutation_/out_reg_598_/Q (DFFX1_HVT)               0.41      2.07       2.07 f
+  f_permutation_/n490 (net)                     3                   0.00       2.07 f
+  f_permutation_/round_/in[598] (round2in1)                         0.00       2.07 f
+  f_permutation_/round_/in[598] (net)                               0.00       2.07 f
+  f_permutation_/round_/U5566/Y (XNOR2X1_RVT)             0.14      0.41       2.48 f
+  f_permutation_/round_/n8519 (net)             2                   0.00       2.48 f
+  f_permutation_/round_/U829/Y (XOR2X1_HVT)               0.67      1.79       4.26 r
+  f_permutation_/round_/n8520 (net)             1                   0.00       4.26 r
+  f_permutation_/round_/U13030/Y (XOR3X1_RVT)             0.10      0.56       4.82 f
+  f_permutation_/round_/n8521 (net)             1                   0.00       4.82 f
+  f_permutation_/round_/U13031/Y (XOR3X1_RVT)             0.09      0.40       5.22 f
+  f_permutation_/round_/n8524 (net)             1                   0.00       5.22 f
+  f_permutation_/round_/U201/Y (XOR3X1_RVT)               0.13      0.44       5.66 f
+  f_permutation_/round_/n14843 (net)            5                   0.00       5.66 f
+  f_permutation_/round_/U16727/Y (XNOR2X1_RVT)            0.10      0.27       5.93 r
+  f_permutation_/round_/n15170 (net)            3                   0.00       5.93 r
+  f_permutation_/round_/U2220/Y (INVX1_HVT)               0.14      0.14       6.07 f
+  f_permutation_/round_/n15172 (net)            1                   0.00       6.07 f
+  f_permutation_/round_/U16927/Y (OR2X1_RVT)              0.05      0.18       6.25 f
+  f_permutation_/round_/n15174 (net)            1                   0.00       6.25 f
+  f_permutation_/round_/U16928/Y (XNOR2X1_RVT)            0.07      0.19       6.44 r
+  f_permutation_/round_/out[401] (net)          1                   0.00       6.44 r
+  f_permutation_/round_/out[401] (round2in1)                        0.00       6.44 r
+  f_permutation_/round_out[401] (net)                               0.00       6.44 r
+  f_permutation_/U2747/Y (AO22X1_RVT)                     0.06      0.12       6.56 r
+  f_permutation_/n3381 (net)                    1                   0.00       6.56 r
+  f_permutation_/out_reg_401_/D (DFFX1_HVT)               0.06      0.00       6.56 r
+  data arrival time                                                            6.56
+
+  clock clk (rise edge)                                             8.00       8.00
+  clock network delay (ideal)                                       0.00       8.00
+  clock uncertainty                                                -0.20       7.80
+  f_permutation_/out_reg_401_/CLK (DFFX1_HVT)                       0.00       7.80 r
+  library setup time                                               -1.23       6.57
+  data required time                                                           6.57
+  ---------------------------------------------------------------------------------------------------------
+  data required time                                                           6.57
+  data arrival time                                                           -6.56
+  ---------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                  0.01
+
+
+1
