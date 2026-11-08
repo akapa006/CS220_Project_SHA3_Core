@@ -1,0 +1,182 @@
+Error: Library Compiler executable path is not set. (PT-063)
+
+                                 PrimeTime (R)
+
+              Version V-2023.12-SP5-4 for linux64 - Aug 07, 2025 
+
+                    Copyright (c) 1988 - 2025 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+Information: Term was not able to be set up using xterm-256color . Using "xterm" by default instead. (CLE-10)
+# =============================================================================
+# run_ptpx.tcl -- PrimeTime PX average-power analysis of the synthesized SHA-3
+#                 core (CS 220 Team 2, midterm)
+#
+# What it does
+#   1. Loads the SAME worst-case libraries synthesis used (ss0p75v125c RVT/LVT/HVT)
+#   2. Reads the synthesized netlist and the SDC written by the same synthesis run
+#   3. Annotates switching activity from a VCD of the gate-level (netlist)
+#      simulation running a representative workload at the synthesized clock
+#   4. Runs averaged power analysis and writes reports to reports/
+#
+# Inputs (hand-off points with the other folders; override any of them with
+# environment variables before running, e.g.  setenv PT_VCD ../sim/power.vcd)
+#   PT_NETLIST   ../syn/keccak_synthesized.v   from syn/
+#   PT_SDC       ../syn/keccak_const.sdc       from syn/  (clock = 2.5 ns)
+#   PT_TOP       keccak                        top module of the netlist
+#   PT_VCD       ../sim/keccak.vcd             from sim/ (netlist simulation)
+#   PT_STRIP     test_keccak_vec/uut           testbench path to the DUT in the VCD
+#   PT_LIB_DIR   /usr/local/synopsys/pdk/SAED32_EDK/lib
+#   PT_T_START / PT_T_END   optional analysis window in ns (e.g. skip reset)
+#
+# Run (from the ptpx/ folder):   ./run_ptpx.csh      or
+#                                pt_shell -f run_ptpx.tcl | tee reports/ptpx_run.log
+# =============================================================================
+proc cfg {name default} {
+    if {[info exists ::env($name)] && $::env($name) ne ""} { return $::env($name) }
+    return $default
+}
+set NETLIST [cfg PT_NETLIST "../syn/keccak_synthesized.v"]
+../syn/keccak_synthesized.v
+set SDC     [cfg PT_SDC     "../syn/keccak_const.sdc"]
+../syn/keccak_const.sdc
+set TOP     [cfg PT_TOP     "keccak"]
+keccak
+set VCD     [cfg PT_VCD     "../sim/keccak.vcd"]
+../sim/keccak.vcd
+set STRIP   [cfg PT_STRIP   "test_keccak_vec/uut"]
+test_keccak_vec/uut
+set LIB_DIR [cfg PT_LIB_DIR "/usr/local/synopsys/pdk/SAED32_EDK/lib"]
+/usr/local/synopsys/pdk/SAED32_EDK/lib
+set T_START [cfg PT_T_START ""]
+set T_END   [cfg PT_T_END   ""]
+set RPT     "reports"
+reports
+file mkdir $RPT
+foreach f [list $NETLIST $SDC $VCD] {
+    if {![file exists $f]} { puts "ERROR: input file not found: $f"; exit 1 }
+}
+# ---- 1. power analysis mode and libraries ----------------------------------
+set power_enable_analysis TRUE
+Information: Checked out license 'PrimePower' (PT-019)
+TRUE
+set power_analysis_mode   averaged
+averaged
+# Worst-case corner required by the midterm, identical to syn/syn.tcl
+set target_library [list     ${LIB_DIR}/stdcell_rvt/db_nldm/saed32rvt_ss0p75v125c.db     ${LIB_DIR}/stdcell_lvt/db_nldm/saed32lvt_ss0p75v125c.db     ${LIB_DIR}/stdcell_hvt/db_nldm/saed32hvt_ss0p75v125c.db ]
+/usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_rvt/db_nldm/saed32rvt_ss0p75v125c.db /usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p75v125c.db /usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75v125c.db
+set link_library [concat {*} $target_library]
+* /usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_rvt/db_nldm/saed32rvt_ss0p75v125c.db /usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p75v125c.db /usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75v125c.db
+foreach lib $target_library { read_db $lib }
+Loading db file '/usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_rvt/db_nldm/saed32rvt_ss0p75v125c.db'
+Loading db file '/usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p75v125c.db'
+Loading db file '/usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75v125c.db'
+# ---- 2. netlist + constraints from the same synthesis run -----------------
+read_verilog $NETLIST
+1
+link_design  $TOP
+Loading verilog file '/home/csgrad/dtang041/CS220_Project_SHA3_Core/syn/keccak_synthesized.v'
+Linking design keccak...
+Information: Removing 5 unneeded designs..... (LNK-034)
+Information: 257 (87.41%) library cells are unused in library saed32rvt_ss0p75v125c..... (LNK-045)
+Information: 260 (88.44%) library cells are unused in library saed32lvt_ss0p75v125c..... (LNK-045)
+Information: 288 (97.96%) library cells are unused in library saed32hvt_ss0p75v125c..... (LNK-045)
+Information: total 805 library cells are unused (LNK-046)
+Design 'keccak' was successfully linked.
+Information: There are 25129 leaf cells, ports, hiers and 32497 nets in the design (LNK-047)
+1
+read_sdc     $SDC
+
+Reading SDC version 2.1...
+1
+1
+# ---- 3. switching activity from the netlist simulation --------------------
+if {$T_START ne "" && $T_END ne ""} {
+    read_vcd -strip_path $STRIP -time [list $T_START $T_END] $VCD
+} else {
+    read_vcd -strip_path $STRIP $VCD
+}
+Information: Reading file keccak.vcd to annotate toggle rates on the design...
+Information: Reading vcd file '/home/csgrad/dtang041/CS220_Project_SHA3_Core/sim/keccak.vcd'
+Information: Simulation Start Time : 0.000000 ns, Simulation End Time : 69545.000000 ns, Total Simulation Time : 69545.000000 ns
+
+======================================================================
+Summary:
+Total number of nets = 26068
+Number of annotated nets = 26068 (100.00%)
+Total number of leaf cells = 24538
+Number of fully annotated leaf cells = 22330 (91.00%)
+======================================================================
+
+Information: Total number of synthesis invariant points = 2288 , annotated synthesis invariant points = 2288, annotation_ratio = 100.00%
+1
+# ---- 4. power ----------------------------------------------------------------
+update_power
+Information: Using automatic max wire load selection group 'predcaps'. (ENV-003)
+Information: Using automatic min wire load selection group 'predcaps'. (ENV-003)
+Warning: Some timing arcs have been disabled for breaking timing loops or because of constant propagation. Use the 'report_disable_timing' command to get the list of these disabled timing arcs. (PTE-003)
+Information: Building multi voltage information for entire design. (MV-022)
+Information: Running averaged power analysis... (PWR-601)
+Information: Running power calculation with 4 threads. (PWR-602)
+1
+report_power -nosplit -verbose                 > $RPT/total_power.log
+report_power -nosplit -hierarchy               > $RPT/hier_power.log
+report_power -nosplit -cell -verbose           > $RPT/cell_power.log
+report_switching_activity -list_not_annotated  > $RPT/unannotated.log
+report_switching_activity                      > $RPT/switching_activity.log
+report_clock                                   > $RPT/clock.log
+# One-file summary for the report / README (values in W, converted to mW)
+set d [current_design]
+{"keccak"}
+set fp [open $RPT/power_summary.txt w]
+file35
+puts $fp "SHA-3 core average power (PrimeTime PX, averaged mode)"
+puts $fp "Corner     : ss0p75v125c (RVT + LVT + HVT, db_nldm)"
+puts $fp "Netlist    : $NETLIST   (top = $TOP)"
+puts $fp "Constraints: $SDC"
+puts $fp "Activity   : $VCD   (strip path $STRIP)"
+if {$T_START ne ""} { puts $fp "Window     : $T_START ns to $T_END ns" }
+foreach a {internal_power switching_power leakage_power total_power} {
+    if {[catch {set v [get_attribute $d $a]}]} { set v "n/a" } else { set v [format "%.4f mW" [expr {$v * 1000.0}]] }
+    puts $fp [format "%-16s : %s" $a $v]
+}
+close $fp
+puts "Reports written to $RPT/  (see $RPT/power_summary.txt)"
+Reports written to reports/  (see reports/power_summary.txt)
+exit
+Information: Defining new variable 'T_END'. (CMD-041)
+Information: Defining new variable 'a'. (CMD-041)
+Information: Defining new variable 'd'. (CMD-041)
+Information: Defining new variable 'f'. (CMD-041)
+Information: Defining new variable 'v'. (CMD-041)
+Information: Defining new variable 'fp'. (CMD-041)
+Information: Defining new variable 'LIB_DIR'. (CMD-041)
+Information: Defining new variable 'lib'. (CMD-041)
+Information: Defining new variable 'T_START'. (CMD-041)
+Information: Defining new variable 'NETLIST'. (CMD-041)
+Information: Defining new variable 'STRIP'. (CMD-041)
+Information: Defining new variable 'SDC'. (CMD-041)
+Information: Defining new variable 'RPT'. (CMD-041)
+Information: Defining new variable 'TOP'. (CMD-041)
+Information: Defining new variable 'VCD'. (CMD-041)
+
+Timing updates: 1 (1 implicit, 0 explicit) (0 incremental, 1 full, 0 logical)
+Noise updates: 0 (0 implicit, 0 explicit) (0 incremental, 0 full)
+Maximum memory usage for this session: 2800.25 MB
+CPU usage for this session: 182 seconds 
+Elapsed time for this session: 192 seconds
+Diagnostics summary: 1 error, 1 warning, 28 informationals
+
+Thank you for using pt_shell!

@@ -1,5 +1,8 @@
 `timescale 1ns / 1ps
+// Clock period in ns. Default 20 for RTL; the netlist/power run uses +define+P=2.5 (400 MHz).
+`ifndef P
 `define P 20
+`endif
 
 module test_keccak_vec;
 
@@ -27,7 +30,15 @@ module test_keccak_vec;
         .out(out), .out_ready(out_ready)
     );
 
-    always #(`P/2) clk = ~clk;
+    always #(`P/2.0) clk = ~clk;
+
+`ifdef DUMP_VCD
+    // Switching activity for PrimeTime PX (ptpx/). Compile with +define+DUMP_VCD.
+    initial begin
+        $dumpfile("keccak.vcd");
+        $dumpvars(0, test_keccak_vec.uut);
+    end
+`endif
 
     /* All inputs change on the falling edge, so the core samples them at the rising edge. */
     task do_reset;
@@ -88,6 +99,8 @@ module test_keccak_vec;
         $readmemh("msgs.hex",    bytes);
         $readmemh("digests.hex", digests);
         nvec = lens[0];
+        // Optional +nvec=N runs only the first N vectors (keeps power VCDs small).
+        if ($value$plusargs("nvec=%d", t) && t < nvec) nvec = t;
         fails = 0; off = 0;
 
         #100;
