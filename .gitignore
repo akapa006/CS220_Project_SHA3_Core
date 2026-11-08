@@ -10,6 +10,7 @@ syn/*.mr
 csrc/
 simv
 simv.daidir/
+simv_vectors.daidir/
 ucli.key
 *.vpd
 *.fsdb
