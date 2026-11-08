@@ -1,0 +1,60 @@
+****************************************
+Report : Averaged Power
+	-verbose
+	-nosplit
+Design : keccak
+Version: V-2023.12-SP5-4
+Date   : Sat Nov  7 22:08:39 2026
+****************************************
+
+Library(s) Used:
+
+    saed32rvt_ss0p75v125c (File: /usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_rvt/db_nldm/saed32rvt_ss0p75v125c.db)
+    saed32lvt_ss0p75v125c (File: /usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p75v125c.db)
+    saed32hvt_ss0p75v125c (File: /usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75v125c.db)
+
+
+Operating Conditions: ss0p75v125c   Library: saed32rvt_ss0p75v125c
+Wire Load Model Mode: enclosed
+
+Cell               Design       Wire_model  Library       Selection_type
+--------------------------------------------------------------------------------
+                   keccak       140000      saed32rvt_ss0p75v125c automatic-by-area
+padder_            padder       8000        saed32rvt_ss0p75v125c automatic-by-area
+padder_/p0         padder1      8000        saed32rvt_ss0p75v125c automatic-by-area
+f_permutation_     f_permutation 140000     saed32rvt_ss0p75v125c automatic-by-area
+f_permutation_/rconst_ rconst2in1 ForQA     saed32rvt_ss0p75v125c automatic-by-area
+f_permutation_/round_ round2in1 140000      saed32rvt_ss0p75v125c automatic-by-area
+
+Power-specific unit information :
+    Voltage Units = 1 V
+    Capacitance Units = 0.001 pf
+    Time Units = 1 ns
+    Dynamic Power Units = 1 W
+    Leakage Power Units = 1 W
+
+
+
+  Attributes
+  ----------
+      i  -  Including register clock pin internal power
+      u  -  User defined power group
+
+                        Internal  Switching  Leakage    Total
+Power Group             Power     Power      Power      Power   (     %)  Attrs
+--------------------------------------------------------------------------------
+clock_network           2.967e-03    0.0000    0.0000 2.967e-03 ( 5.35%)  i
+register                7.226e-04 3.706e-04 2.982e-03 4.075e-03 ( 7.35%)  
+combinational              0.0326 6.349e-03 9.439e-03    0.0484 (87.30%)  
+sequential                 0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+memory                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+io_pad                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+black_box                  0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+
+  Net Switching Power  = 6.719e-03   (12.12%)
+  Cell Internal Power  =    0.0363   (65.48%)
+  Cell Leakage Power   =    0.0124   (22.40%)
+                         ---------
+Total Power            =    0.0554  (100.00%)
+
+1

@@ -1,0 +1,9 @@
+SHA-3 core average power (PrimeTime PX, averaged mode)
+Corner     : ss0p75v125c (RVT + LVT + HVT, db_nldm)
+Netlist    : ../syn/keccak_synthesized.v   (top = keccak)
+Constraints: ../syn/keccak_const.sdc
+Activity   : ../sim/keccak.vcd   (strip path test_keccak_vec/uut)
+internal_power   : 36.3013 mW
+switching_power  : 6.7193 mW
+leakage_power    : 12.4208 mW
+total_power      : 55.4414 mW

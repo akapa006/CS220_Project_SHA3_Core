@@ -16,3 +16,12 @@ ucli.key
 *.fsdb
 *.vcd
 *.hex
+# --- simulation build output and generated files (regenerate with sim/run_*.csh) ---
+simv*
+*.daidir/
+csrc/
+ucli.key
+*.vcd
+*.fsdb
+*.hex
+sim/*.log
