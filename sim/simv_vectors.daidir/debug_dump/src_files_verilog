@@ -1,0 +1,7 @@
+/home/cegrad/ajaya014/CS220_Project_SHA3_Core/rtl/f_permutation.v
+/home/cegrad/ajaya014/CS220_Project_SHA3_Core/rtl/keccak.v
+/home/cegrad/ajaya014/CS220_Project_SHA3_Core/rtl/padder.v
+/home/cegrad/ajaya014/CS220_Project_SHA3_Core/rtl/padder1.v
+/home/cegrad/ajaya014/CS220_Project_SHA3_Core/rtl/rconst2in1.v
+/home/cegrad/ajaya014/CS220_Project_SHA3_Core/rtl/round2in1.v
+/home/cegrad/ajaya014/CS220_Project_SHA3_Core/sim/test_keccak_vectors.v

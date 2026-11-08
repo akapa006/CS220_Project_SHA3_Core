@@ -1,0 +1,133 @@
+0
+39
++itf+/usr/local/synopsys/vcs/W-2024.09-SP2-5/linux64/lib/vcsdp_lite.tab
++vcsd1
++vpi
+-Mamsrun=
+-Masflags=
+-Mcc=gcc
+-Mcfl= -pipe -fPIC -O -I/usr/local/synopsys/vcs/W-2024.09-SP2-5/include
+-Mcplusplus=g++
+-Mcrt0=
+-Mcrtn=
+-Mcsrc=
+-Mexternalobj=
+-Mldflags= -rdynamic
+-Mobjects= /usr/local/synopsys/vcs/W-2024.09-SP2-5/linux64/lib/libvirsim.so /usr/local/synopsys/vcs/W-2024.09-SP2-5/linux64/lib/liberrorinf.so /usr/local/synopsys/vcs/W-2024.09-SP2-5/linux64/lib/libsnpsmalloc.so /usr/local/synopsys/vcs/W-2024.09-SP2-5/linux64/lib/libvfs.so
+-Mout=simv_vectors
+-Msaverestoreobj=/usr/local/synopsys/vcs/W-2024.09-SP2-5/linux64/lib/vcs_save_restore_new.o
+-Msyslibs=/usr/local/synopsys/verdi/W-2024.09-SP2-5/share/PLI/VCS/LINUX64/pli.a -ldl
+-Mvcsaceobjs=
+-Mxcflags= -pipe -fPIC -I/usr/local/synopsys/vcs/W-2024.09-SP2-5/include
+-Mxllcflags=
+-P
+-debug_access+all
+-fsdb
+-full64
+-gen_obj
+-o simv_vectors
+-picarchive
+-sverilog
+-timescale=1ns/1ps
+/usr/local/synopsys/vcs/W-2024.09-SP2-5/linux64/bin/vcs1
+simv_vectors
+/usr/local/synopsys/verdi/W-2024.09-SP2-5/share/PLI/VCS/LINUX64/verdi.tab
+../rtl/f_permutation.v
+../rtl/keccak.v
+../rtl/padder1.v
+../rtl/padder.v
+../rtl/rconst2in1.v
+../rtl/round2in1.v
+test_keccak_vectors.v
+72
+which_declare=declare -f
+XDG_SESSION_ID=18343
+XDG_RUNTIME_DIR=/run/user/21573
+XDG_DATA_DIRS=/home/cegrad/ajaya014/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
+XCELIUM_HOME=/usr/local/cadence/XCELIUM2203
+VMR_MODE_FLAG=64
+VERDI_HOME=/usr/local/synopsys/verdi/W-2024.09-SP2-5
+VENDOR=unknown
+VCS_PYTHON3=/usr/local/synopsys/vcs/W-2024.09-SP2-5/linux64/bin/Python3/bin/python3
+VCS_PATHMAP_PRELOAD_DONE=1
+VCS_MX_HOME_INTERNAL=1
+VCS_MODE_FLAG=64
+VCS_INTERNAL_CONVERTEDLIBS=
+VCS_HOME=/usr/local/synopsys/vcs/W-2024.09-SP2-5
+VCS_EXEC_DONE=1
+VCS_DEPTH=0
+VCS_ARG_ADDED_FOR_TMP=1
+VCS_ARCH=linux64
+UNAME=/bin/uname
+TOOL_HOME=/usr/local/synopsys/vcs/W-2024.09-SP2-5/linux64
+SYNOPSYS=/usr/local/synopsys
+STARRC_HOME=/usr/local/synopsys/starrc/W-2024.09-SP5-1
+SSH_TTY=/dev/pts/40
+SSH_CONNECTION=216.9.16.86 64180 169.235.16.45 22
+SSH_CLIENT=216.9.16.86 64180 22
+SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
+SPECTRE_LIBS=/usr/local/cadence/SPECTRE231/tools.lnx86/lib/64bit:/usr/local/cadence/SPECTRE231/tools.lnx86/spectre/lib/64bit:/usr/local/cadence/SPECTRE231/tools.lnx86/mdl/lib/64bit:/usr/local/cadence/SPECTRE231/tools.lnx86/fmc/lib/64bit:/usr/local/cadence/SPECTRE231/tools.lnx86/inca/lib/64bit
+SPECTRE_HOME=/usr/local/cadence/SPECTRE231
+SNPS_VCS_PYTHON3=/usr/local/synopsys/vcs/W-2024.09-SP2-5/linux64/bin/Python3/bin/python3
+SNPS_VCS_CLANG_PATH=/usr/local/synopsys/vcs/W-2024.09-SP2-5/linux64/clang
+SNPS_INTERNAL_VCS_LINUX_OS=linux
+SNPS_DISABLE_PLATFORM_CHECK=1
+SENTAURUS_HOME=/usr/local/synopsys/sentaurus/T-2022.03-SP1
+SELINUX_USE_CURRENT_RANGE=
+SELINUX_ROLE_REQUESTED=
+SELINUX_LEVEL_REQUESTED=
+SCRNAME=vcs
+SCRIPT_NAME=vcs
+SAED90_PDK=/usr/local/synopsys/pdk/SAED90nm_PDK_10222017
+REMOTEHOST=216.9.16.86
+QUANTUMATK_HOME=/usr/local/synopsys/quantumatk/V-2023.12-SP1
+PT_HOME=/usr/local/synopsys/prime/V-2023.12-SP5-4
+PRIMEWAVE_REL_HOME=/usr/local/synopsys/primewavereliability/W-2024.09-SP2-7
+PRIMEWAVE_HOME=/usr/local/synopsys/primewave/W-2024.09-SP2-7
+OVA_UUM=0
+OSTYPE=linux
+LESSOPEN=||/usr/bin/lesspipe.sh %s
+LC_ALL=C
+KRB5CCNAME=KCM:
+KDEDIRS=/usr
+INNOVUS_LIBS=/usr/local/cadence/INNOVUS211/tools.lnx86/lib/64bit:/usr/local/cadence/INNOVUS211/tools.lnx86/Qt/v5/64bit/lib:/usr/local/cadence/INNOVUS211/tools.lnx86/TPtools/libevent_2_1_8/lib/64bit:/usr/local/cadence/INNOVUS211/tools.lnx86/zmq/lib/64bit:/usr/local/cadence/INNOVUS211/tools.lnx86/vxe/lib/64bit
+INNOVUS_HOME=/usr/local/cadence/INNOVUS211
+ICV_HOME_DIR=/usr/local/synopsys/icvalidator/V-2023.12-SP5-13
+ICVWB_HOME=/usr/local/synopsys/icv_workbench/X-2025.06-SP1
+ICC2_WRAPPER=/usr/local/icc2-wrapper
+ICC2_HOME=/usr/local/synopsys/icc2/V-2023.12-SP5-6
+HSPICE_HOME=/usr/local/synopsys/hspice/X-2025.06-SP1/hspice/linux64
+HOSTTYPE=x86_64-linux
+HISTCONTROL=ignoredups
+GROUP=cegrad
+GENUS_LIBS=/usr/local/cadence/GENUS211/tools.lnx86/lib/64bit:/usr/local/cadence/GENUS211/tools.lnx86/synth/lib/64bit:/usr/local/cadence/GENUS211/tools.lnx86/zmq/lib/64bit:/usr/local/cadence/GENUS211/tools.lnx86/Qt/v5/64bit/lib
+GENUS_HOME=/usr/local/cadence/GENUS211
+GDK_BACKEND=x11
+FC_HOME=/usr/local/synopsys/fusioncompiler/V-2023.12-SP5-6
+DEBUGINFOD_URLS=https://debuginfod.centos.org/ 
+DC_HOME=/usr/local/synopsys/syn/W-2024.09-SP5-4
+DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-WC11oYaFa9,guid=8466bae47cb726e1baf6c9696aefd0ef
+CDS_ROOT=/usr/local/cadence/IC618
+CDS_LICENSE_FILE=5280@cadence.engr.ucr.edu
+CDS_IC618_LIBS=/usr/local/cadence/IC618/tools.lnx86/lib/64bit:/usr/local/cadence/IC618/tools.lnx86/Qt/v5/64bit/lib:/usr/local/cadence/IC618/tools.lnx86/sev/lib/64bit:/usr/local/cadence/IC618/tools.lnx86/TPtools/grpc-3.12.2/lib64:/usr/local/cadence/IC618/oa_v22.60.096/lib/linux_rhel60_64/opt
+CADENCE_ROOT=/usr/local/cadence
+BASH_FUNC_which%%=() {  ( alias;_ eval ${which_declare} ) | /usr/bin/which --tty-only --read-alias --read-functions --show-tilde --show-dot $@_}
+0
+0
+9
+1794103163 test_keccak_vectors.v
+1794101495 ../rtl/round2in1.v
+1794101495 ../rtl/rconst2in1.v
+1794101495 ../rtl/padder.v
+1794101495 ../rtl/padder1.v
+1794101495 ../rtl/keccak.v
+1794101495 ../rtl/f_permutation.v
+1757588796 /usr/local/synopsys/verdi/W-2024.09-SP2-5/share/PLI/VCS/LINUX64/verdi.tab
+1758337605 /usr/local/synopsys/vcs/W-2024.09-SP2-5/linux64/lib/vcsdp_lite.tab
+4
+1758339832 /usr/local/synopsys/vcs/W-2024.09-SP2-5/linux64/lib/libvirsim.so
+1758338532 /usr/local/synopsys/vcs/W-2024.09-SP2-5/linux64/lib/liberrorinf.so
+1758338525 /usr/local/synopsys/vcs/W-2024.09-SP2-5/linux64/lib/libsnpsmalloc.so
+1758338521 /usr/local/synopsys/vcs/W-2024.09-SP2-5/linux64/lib/libvfs.so
+1794103318 simv_vectors.daidir
+-1 partitionlib
