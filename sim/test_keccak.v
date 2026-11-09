@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 `define P 20
 
-/* Small self-contained testbench: 10 regular + 5 edge cases, no external files.
+/* Small self-contained testbench: 10 regular + 10 edge cases, no external files.
  * Message byte k of every test is (7*k + 1) mod 256; expected digests are the
  * original-Keccak-512 (0x01 padding) values for those messages. */
 module test_keccak_small;
@@ -97,7 +97,7 @@ module test_keccak_small;
 
         // hash_test(length_bytes, is_edge, expected_digest)
         // ---- 10 regular cases ----
-        // ---- 5 edge cases: empty, 71 / 72 / 73 bytes (block boundary), 144 (two blocks) ----
+        // ---- 10 edge cases: empty, 71 / 72 / 73 bytes (block boundary), 144 (two blocks) ----
         hash_test(  1, 0, 512'h9e8ca28141be27be1bbc11e5d4304514c548d3ea99a058a9a6802ea4e2357b91c4df65bd97353aa37369d3d74b47ca0902fd197b4171a3297d8c5cee41bba240);
         hash_test(  5, 0, 512'hee07f44607fe30680c5493b219dacbdb0b627cf97b7e1743760caf8312611f051088c7cf2fadd38beeae8ba135cd1402de57ee0061e3dde59db852b688511168);
         hash_test(  8, 0, 512'h00cb6b4f2a925496c3ee414298da657872358ea9ba8a7792ae572bee57d645f51d1cb21ff95d1c0b6789872820b891fac5d421d8ffa9fac5bc393a786aaf757c);
@@ -113,6 +113,11 @@ module test_keccak_small;
         hash_test( 72, 1, 512'hf4543c426e3521c5079911da94a75a6d14897039742677e383b3a09bbbb14365cc9eee0a138fe35f3a390d6da073e2ec15398808a1cb2d72a8f9d5a6ed537792);
         hash_test( 73, 1, 512'hcd91b596d500c274fbce67fb146c17acb3244d3e729dcc3929ccca972d3340582604ea0eb0228e290ba9c25e6b9209a9147e1a2101d38ee6c9d740fcac36d15c);
         hash_test(144, 1, 512'h44d41e6ebdf4062014cf772c9cbc9abe6ab040b696f288af5f0bfcc7d0889c855274d6dd7192ffecfda77d68a1ce00c69e68550640f88fffe59009e47baaf618);
+        hash_test( 64, 1, 512'h47566762b31eeff4a6f6b7e20df89850ba9b0dab16e9527883ca51a6d78c58b4ea8c910f8898fec8c52d30ec8893708cfdf9f5d4e5f10a67bb17eaf40fc14792);
+        hash_test( 70, 1, 512'h3b6bde1e3c13ddb392fea526c2d003455129db9cb2921a001389fb650443700620f6a8b95046fb8e71d1a4d7fa2de4cebf9f24399c402e8cf4a495f0c70e26b3);
+        hash_test(143, 1, 512'h378653b6e80672d897a6737978df934fa249a27ec9e229ec5c7320b04d7b26bf049a22933870a091298eafedb560513434a82e80967564d17fe28f1f453c0f9b);
+        hash_test(145, 1, 512'h7d0ba086039a795dc51c885475ceb00a20e52b4a2df68eed609641e9fb6725fc442742e86947763882abe95100731fd73bd0dcff1ebb9044822d4632dfa48bd9);
+        hash_test(216, 1, 512'hee284963a924534386aaa9677a672d02a12aa7d8860efdf7a936f0fd1bfbfbce9e48831dc86935dc6387623678f2323f9d5fc18265170f4b6783f11422c75299);
 
         if (fail == 0) $display("ALL %0d TESTS PASSED", pass);
         else           $display("%0d PASSED, %0d FAILED", pass, fail);
