@@ -10,7 +10,7 @@
 # Logs: rtl_vectors.log, rtl_vectors_gaps.log, rtl_hardcoded.log
 # Expect: "ALL 451 VECTORS PASSED" twice, and every hard-coded case passing.
 # =============================================================================
-python3 gen_vectors.py || exit 1
+python3 ../sw/gen_vectors.py || exit 1
 
 vcs -full64 -timescale=1ns/1ps test_keccak_vectors.v ../rtl/*.v \
     -o simv_vectors -l comp_vectors.log > /dev/null || exit 1

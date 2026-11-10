@@ -24,7 +24,7 @@ if (! $?NVEC) setenv NVEC 200
 set LIB = /usr/local/synopsys/pdk/SAED32_EDK/lib
 
 if (! -e lens.hex) then
-    python3 gen_vectors.py || exit 1
+    python3 ../sw/gen_vectors.py || exit 1
 endif
 
 vcs -full64 -timescale=1ns/1ps +define+P=2.5 +define+DUMP_VCD \

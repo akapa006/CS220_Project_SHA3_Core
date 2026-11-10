@@ -1,0 +1,39 @@
+****************************************
+Report : Time Based Power
+	-nosplit
+Design : keccak
+Version: V-2023.12-SP5-4
+Date   : Sun Nov  8 23:20:36 2026
+****************************************
+
+
+
+  Attributes
+  ----------
+      i  -  Including register clock pin internal power
+      u  -  User defined power group
+
+                        Internal  Switching  Leakage    Total               Peak         Peak            Glitch    X-tran
+Power Group             Power     Power      Power      Power   (     %)    Power        Time            Power     Power    Attrs
+----------------------------------------------------------------------------------------------------------------------------------
+clock_network           2.966e-03    0.0000    0.0000 2.966e-03 (11.13%)      N/A         N/A             0.0000    0.0000  i
+register                4.587e-04 2.891e-04 2.983e-03 3.731e-03 (14.00%)      N/A         N/A          2.563e-06    0.0000  
+combinational           9.048e-03 1.537e-03 9.362e-03    0.0199 (74.87%)      N/A         N/A          4.580e-05    0.0000  
+sequential                 0.0000    0.0000    0.0000    0.0000 ( 0.00%)      N/A         N/A             0.0000    0.0000  
+memory                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)      N/A         N/A             0.0000    0.0000  
+io_pad                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)      N/A         N/A             0.0000    0.0000  
+black_box                  0.0000    0.0000    0.0000    0.0000 ( 0.00%)      N/A         N/A             0.0000    0.0000  
+
+  Net Switching Power  = 1.827e-03   ( 6.86%)
+  Cell Internal Power  =    0.0125   (46.81%)
+  Cell Leakage Power   =    0.0123   (46.33%)
+                         ---------
+Total Power            =    0.0266  (100.00%)
+
+X Transition Power     =    0.0000
+Glitching Power        = 4.836e-05
+
+Peak Power             =    0.0325
+Peak Time              =   9415.00
+
+1
