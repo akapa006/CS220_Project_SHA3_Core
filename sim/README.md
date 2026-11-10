@@ -2,7 +2,7 @@
 
 | File | Purpose |
 |---|---|
-| `gen_vectors.py` | Golden model (Keccak-512 with this core's 0x01 padding, self-checked against `hashlib.sha3_512` with 0x06 padding) and vector generator. Writes `lens.hex`, `msgs.hex`, `digests.hex`. Seed 1 by default: `python3 gen_vectors.py [seed]`. |
+| `../sw/gen_vectors.py` | Golden model (Keccak-512 with this core's 0x01 padding, self-checked against `hashlib.sha3_512` with 0x06 padding) and vector generator. Writes `lens.hex`, `msgs.hex`, `digests.hex`. Seed 1 by default: `python3 ../sw/gen_vectors.py [seed]` (run from sim/). |
 | `test_keccak_vectors.v` | Self-checking testbench: feeds every vector to the core and compares each 512-bit output with the golden digest. 451 vectors: every length 0–300 bytes plus 150 random lengths 301–699 (1–10 blocks). |
 | `test_keccak.v` | Hand-written corner cases with hard-coded expected hashes. |
 | `run_rtl.csh` | RTL regression: vectors back to back, vectors with random idle gaps (`+gaps`), and the hard-coded cases. |
