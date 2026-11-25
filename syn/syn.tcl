@@ -18,7 +18,7 @@ set mw_logic0_net "VSS"
 set DESIGN_NAME     "keccak"
 
 # Analyze the Verilog source file
-analyze -format verilog "keccak.v padder.v padder1.v f_permutation.v round2in1.v rconst2in1.v"
+analyze -format verilog "keccak.v padder.v padder1.v f_permutation.v round.v rconst.v"
 
 # Elaborate the design
 elaborate ${DESIGN_NAME} -architecture verilog -library DEFAULT
@@ -30,8 +30,8 @@ link
 # ungroup -all -flatten -simple_names
 
 # Constraints
-# Clock definition: 2.5 ns period (400 MHz), 50% duty cycle
-create_clock -name "clk" -period 2.5 -waveform {0 1.25} [get_ports "clk"]
+# Clock definition: 1.6 ns period (625 MHz), 50% duty cycle
+create_clock -name "clk" -period 1.6 -waveform {0 0.8} [get_ports "clk"]
 set_dont_touch_network [get_clocks "clk"]
 
 # Input and output delays relative to clock
