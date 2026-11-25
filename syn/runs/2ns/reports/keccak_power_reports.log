@@ -1,0 +1,54 @@
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : keccak
+Version: W-2024.09-SP5-4
+Date   : Tue Nov 24 18:58:54 2026
+****************************************
+
+
+Library(s) Used:
+
+    saed32rvt_ss0p75v125c (File: /usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_rvt/db_nldm/saed32rvt_ss0p75v125c.db)
+    saed32hvt_ss0p75v125c (File: /usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75v125c.db)
+    saed32lvt_ss0p75v125c (File: /usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p75v125c.db)
+
+
+Operating Conditions: ss0p75v125c   Library: saed32hvt_ss0p75v125c
+Wire Load Model Mode: enclosed
+
+Design        Wire Load Model            Library
+------------------------------------------------
+keccak                 70000             saed32hvt_ss0p75v125c
+padder                 8000              saed32hvt_ss0p75v125c
+f_permutation          70000             saed32hvt_ss0p75v125c
+padder1                8000              saed32hvt_ss0p75v125c
+rconst                 ForQA             saed32hvt_ss0p75v125c
+round                  35000             saed32hvt_ss0p75v125c
+
+
+Global Operating Voltage = 0.75 
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+keccak                                  611.864 5.75e+03 5.62e+09 1.20e+04 100.0
+  f_permutation_ (f_permutation)        598.198 4.72e+03 4.84e+09 1.02e+04  84.8
+    round_ (round)                      475.218 1.82e+03 1.92e+09 4.21e+03  35.2
+    rconst_ (rconst)                      0.108    0.438 1.08e+06    1.631   0.0
+  padder_ (padder)                       13.580  994.380 7.72e+08 1.78e+03  14.9
+    p0 (padder1)                          1.237    3.564 1.41e+06    6.210   0.1
+1

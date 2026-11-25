@@ -41,7 +41,7 @@ module keccak(clk, reset, in, in_ready, is_last, byte_num, buffer_full, out, out
     wire      [1599:0] f_out;
     wire               f_out_ready;
     wire       [511:0] out1;      /* before reorder byte */
-    reg        [10:0]  i;         /* gen "out_ready" */
+    reg        [22:0]  i;         /* gen "out_ready" 24 cycle permutation */
     genvar w, b;
 
     assign out1 = f_out[1599:1599-511];
@@ -50,7 +50,7 @@ module keccak(clk, reset, in, in_ready, is_last, byte_num, buffer_full, out, out
       if (reset)
         i <= 0;
       else
-        i <= {i[9:0], state & f_ack};
+        i <= {i[21:0], state & f_ack};
 
     always @ (posedge clk)
       if (reset)
@@ -82,7 +82,7 @@ module keccak(clk, reset, in, in_ready, is_last, byte_num, buffer_full, out, out
     always @ (posedge clk)
       if (reset)
         out_ready <= 0;
-      else if (i[10])
+      else if (i[22])
         out_ready <= 1;
 
     padder

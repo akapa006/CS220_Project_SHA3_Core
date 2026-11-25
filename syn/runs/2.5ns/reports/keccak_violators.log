@@ -4,9 +4,31 @@ Report : constraint
         -all_violators
 Design : keccak
 Version: W-2024.09-SP5-4
-Date   : Tue Nov  3 21:02:40 2026
+Date   : Tue Nov 24 18:41:40 2026
 ****************************************
 
-This design has no violated constraints.
+
+   max_transition
+
+                             Required        Actual
+   Net                      Transition     Transition        Slack
+   -----------------------------------------------------------------
+   padder_/n659                 0.25           0.29          -0.04  (VIOLATED)
+       PIN :   padder_/U15/Y
+                                0.25           0.29          -0.04  (VIOLATED)
+
+   -----------------------------------------------------------------
+   Total                      1                  -0.04  
+
+   max_capacitance
+
+                             Required        Actual
+   Net                      Capacitance    Capacitance       Slack
+   -----------------------------------------------------------------
+   padder_/n659                16.00          25.92          -9.92  (VIOLATED)
+   f_permutation_/n1222        32.00          37.16          -5.16  (VIOLATED)
+
+   -----------------------------------------------------------------
+   Total                      2                 -15.08  
 
 1

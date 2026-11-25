@@ -24,9 +24,9 @@ module f_permutation(clk, reset, in, in_ready, ack, out, out_ready);
     output reg [1599:0] out;
     output reg          out_ready;
 
-    reg        [10:0]   i; /* select round constant */
+    reg        [22:0]   i; /* select round constant(24 rounds) */
     wire       [1599:0] round_in, round_out;
-    wire       [63:0]   rc1, rc2;
+    wire       [63:0]   rc;
     wire                update;
     wire                accept;
     reg                 calc; /* == 1: calculating rounds */
@@ -35,11 +35,11 @@ module f_permutation(clk, reset, in, in_ready, ack, out, out_ready);
     
     always @ (posedge clk)
       if (reset) i <= 0;
-      else       i <= {i[9:0], accept};
+      else       i <= {i[21:0], accept};
     
     always @ (posedge clk)
       if (reset) calc <= 0;
-      else       calc <= (calc & (~ i[10])) | accept;
+      else       calc <= (calc & (~ i[22])) | accept;
     
     assign update = calc | accept;
 
@@ -50,16 +50,16 @@ module f_permutation(clk, reset, in, in_ready, ack, out, out_ready);
         out_ready <= 0;
       else if (accept)
         out_ready <= 0;
-      else if (i[10]) // only change at the last round
+      else if (i[22]) // only change at the last round
         out_ready <= 1;
 
     assign round_in = accept ? {in ^ out[1599:1599-575], out[1599-576:0]} : out;
 
-    rconst2in1
-      rconst_ ({i, accept}, rc1, rc2);
+    rconst
+      rconst_ ({i, accept}, rc);
 
-    round2in1
-      round_ (round_in, rc1, rc2, round_out);
+    round
+      round_ (round_in, rc, round_out);
 
     always @ (posedge clk)
       if (reset)

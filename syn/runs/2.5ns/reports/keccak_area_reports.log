@@ -3,48 +3,48 @@
 Report : area
 Design : keccak
 Version: W-2024.09-SP5-4
-Date   : Tue Nov  3 21:02:37 2026
+Date   : Tue Nov 24 18:41:38 2026
 ****************************************
 
 Library(s) Used:
 
-    saed32lvt_ss0p75v125c (File: /usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p75v125c.db)
     saed32rvt_ss0p75v125c (File: /usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_rvt/db_nldm/saed32rvt_ss0p75v125c.db)
     saed32hvt_ss0p75v125c (File: /usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75v125c.db)
+    saed32lvt_ss0p75v125c (File: /usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p75v125c.db)
 
-Number of ports:                         7015
-Number of nets:                         29734
-Number of cells:                        24565
-Number of combinational cells:          22326
-Number of sequential cells:              2212
+Number of ports:                         6899
+Number of nets:                         22193
+Number of cells:                        15426
+Number of combinational cells:          13139
+Number of sequential cells:              2236
 Number of macros/black boxes:               0
-Number of buf/inv:                       4012
-Number of references:                       7
+Number of buf/inv:                       3932
+Number of references:                       9
 
-Combinational area:              87843.602436
-Buf/Inv area:                     5208.173015
-Noncombinational area:           14629.037405
+Combinational area:              38789.744368
+Buf/Inv area:                     5166.239256
+Noncombinational area:           14798.297313
 Macro/Black Box area:                0.000000
-Net Interconnect area:           24028.417823
+Net Interconnect area:           14757.840658
 
-Total cell area:                102472.639841
-Total area:                     126501.057664
+Total cell area:                 53588.041681
+Total area:                      68345.882339
 
 Hierarchical area distribution
 ------------------------------
 
-                                  Global cell area             Local cell area
-                                  --------------------  ------------------------------ 
-Hierarchical cell                 Absolute     Percent  Combi-      Noncombi-   Black-
-                                  Total        Total    national    national    boxes   Design
---------------------------------  -----------  -------  ----------  ----------  ------  -------------
-keccak                            102472.6398    100.0      8.6409     90.9836  0.0000  keccak
-f_permutation_                     96646.1344     94.3   8801.0068  10657.7831  0.0000  f_permutation
-f_permutation_/rconst_                52.8620      0.1     52.8620      0.0000  0.0000  rconst2in1
-f_permutation_/round_              77134.4824     75.3  77134.4824      0.0000  0.0000  round2in1
-padder_                             5726.8810      5.6   1633.6376   3880.2707  0.0000  padder
-padder_/p0                           212.9727      0.2    212.9727      0.0000  0.0000  padder1
---------------------------------  -----------  -------  ----------  ----------  ------  -------------
-Total                                                   87843.6024  14629.0374  0.0000
+                                  Global cell area            Local cell area
+                                  -------------------  ------------------------------ 
+Hierarchical cell                 Absolute    Percent  Combi-      Noncombi-   Black-
+                                  Total       Total    national    national    boxes   Design
+--------------------------------  ----------  -------  ----------  ----------  ------  -------------
+keccak                            53588.0417    100.0     10.1658    176.8842  0.0000  keccak
+f_permutation_                    47663.9449     88.9  11608.0271  10742.6672  0.0000  f_permutation
+f_permutation_/rconst_               63.7901      0.1     63.7901      0.0000  0.0000  rconst
+f_permutation_/round_             25249.4604     47.1  25249.4604      0.0000  0.0000  round
+padder_                            5737.0468     10.7   1645.3283   3878.7459  0.0000  padder
+padder_/p0                          212.9727      0.4    212.9727      0.0000  0.0000  padder1
+--------------------------------  ----------  -------  ----------  ----------  ------  -------------
+Total                                                  38789.7444  14798.2973  0.0000
 
 1

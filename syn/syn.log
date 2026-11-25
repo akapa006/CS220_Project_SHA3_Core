@@ -1,3 +1,4 @@
+nohup: ignoring input
 Info: [VCS_SAVE_RESTORE_INFO] ASLR (Address Space Layout Randomization) is detected on the machine. To enable $save functionality, ASLR will be switched off and simv re-executed.
 Please use '-no_save' simv switch to avoid this.
 
@@ -31,19 +32,19 @@ Please use '-no_save' simv switch to avoid this.
             Inclusivity and Diversity" (Refer to article 000036315 at
                         https://solvnetplus.synopsys.com)
 Initializing...
-Current time:       Tue Nov  3 20:37:39 2026
+Current time:       Tue Nov 24 20:03:43 2026
 Hostname:           bender.engr.ucr.edu
 CPU Model:          Intel(R) Xeon(R) Gold 5215 CPU @ 2.50GHz
-CPU Details:        Cores = 40 : Sockets = 2 : Cache Size = 14080 KB : Freq = 3.00 GHz
-OS:                 Linux 4.18.0-553.158.1.el8_10.x86_64
-RAM:                251 GB (Free   5 GB)
-Swap:                 3 GB (Free   0 GB)
+CPU Details:        Cores = 40 : Sockets = 2 : Cache Size = 14080 KB : Freq = 2.86 GHz
+OS:                 Linux 4.18.0-553.172.1.el8_10.x86_64
+RAM:                251 GB (Free  95 GB)
+Swap:                 3 GB (Free   3 GB)
 Work Filesystem:    /home/cegrad mounted to toaster:/home/grad/ce
-Tmp Filesystem:     / mounted to /dev/md126
-Work Disk:          6745 GB (Free 3472 GB)
-Tmp Disk:           888 GB (Free 212 GB)
+Tmp Filesystem:     / mounted to /dev/md125
+Work Disk:          6745 GB (Free 3267 GB)
+Tmp Disk:           888 GB (Free 168 GB)
 
-CPU Load: 50%, Ram Free: 5 GB, Swap Free: 0 GB, Work Disk Free: 3472 GB, Tmp Disk Free: 212 GB
+CPU Load: 48%, Ram Free: 95 GB, Swap Free: 3 GB, Work Disk Free: 3267 GB, Tmp Disk Free: 168 GB
 # Set search and library paths
 set LIB_DIR "/usr/local/synopsys/pdk/SAED32_EDK/lib"
 /usr/local/synopsys/pdk/SAED32_EDK/lib
@@ -69,20 +70,17 @@ VSS
 set DESIGN_NAME     "keccak"
 keccak
 # Analyze the Verilog source file
-analyze -format verilog "keccak.v padder.v padder1.v f_permutation.v round2in1.v rconst2in1.v"
+analyze -format verilog "keccak.v padder.v padder1.v f_permutation.v round.v rconst.v"
 Running PRESTO HDLC
 Compiling source file ../rtl/keccak.v
 Compiling source file ../rtl/padder.v
 Compiling source file ../rtl/padder1.v
 Compiling source file ../rtl/f_permutation.v
-Compiling source file ../rtl/round2in1.v
-Compiling source file ../rtl/rconst2in1.v
-Warning:  ../rtl/round2in1.v:140: A unnamed generate block with an LRM-defined name 'genblk1' is detected, which is incompatible with Verilog standard 2001 or 1995. (VER-944)
-Warning:  ../rtl/round2in1.v:140: A unnamed generate block with an LRM-defined name 'genblk1' is detected, which is incompatible with Verilog standard 2001 or 1995. (VER-944)
-Warning:  ../rtl/round2in1.v:152: A unnamed generate block with an LRM-defined name 'genblk1' is detected, which is incompatible with Verilog standard 2001 or 1995. (VER-944)
-Warning:  ../rtl/round2in1.v:248: A unnamed generate block with an LRM-defined name 'genblk1' is detected, which is incompatible with Verilog standard 2001 or 1995. (VER-944)
-Warning:  ../rtl/round2in1.v:248: A unnamed generate block with an LRM-defined name 'genblk1' is detected, which is incompatible with Verilog standard 2001 or 1995. (VER-944)
-Warning:  ../rtl/round2in1.v:260: A unnamed generate block with an LRM-defined name 'genblk1' is detected, which is incompatible with Verilog standard 2001 or 1995. (VER-944)
+Compiling source file ../rtl/round.v
+Compiling source file ../rtl/rconst.v
+Warning:  ../rtl/round.v:136: A unnamed generate block with an LRM-defined name 'genblk1' is detected, which is incompatible with Verilog standard 2001 or 1995. (VER-944)
+Warning:  ../rtl/round.v:136: A unnamed generate block with an LRM-defined name 'genblk1' is detected, which is incompatible with Verilog standard 2001 or 1995. (VER-944)
+Warning:  ../rtl/round.v:148: A unnamed generate block with an LRM-defined name 'genblk1' is detected, which is incompatible with Verilog standard 2001 or 1995. (VER-944)
 Presto compilation completed successfully.
 Loading db file '/usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75v125c.db'
 Loading db file '/usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_rvt/db_nldm/saed32rvt_ss0p75v125c.db'
@@ -103,13 +101,13 @@ Inferred memory devices in process in routine 'keccak' in file
 ==================================================================================
 |    Register Name    |   Type    | Width | Bus | MB |  Set  | Reset | ST | Line |
 ==================================================================================
-|        i_reg        | Flip-flop |  11   |  Y  | N  | None  | None  | N  |  49  |
+|        i_reg        | Flip-flop |  23   |  Y  | N  | None  | None  | N  |  49  |
 |      state_reg      | Flip-flop |   1   |  N  | N  | None  | None  | N  |  55  |
 |    out_ready_reg    | Flip-flop |   1   |  N  | N  | None  | None  | N  |  82  |
 ==================================================================================
 Presto compilation completed successfully. (keccak)
 Module: keccak, Ports: 585, Input: 71, Output: 514, Inout: 0
-Module: keccak, Registers: 13, Async set/reset: 0, Sync set/reset: 0
+Module: keccak, Registers: 25, Async set/reset: 0, Sync set/reset: 0
 Information: Module keccak report end. (ELAB-965)
 Elaborated 1 design.
 Current design is now 'keccak'.
@@ -136,14 +134,14 @@ Inferred memory devices in process in routine 'f_permutation' in file
 ==================================================================================
 |    Register Name    |   Type    | Width | Bus | MB |  Set  | Reset | ST | Line |
 ==================================================================================
-|        i_reg        | Flip-flop |  11   |  Y  | N  | None  | None  | N  |  36  |
+|        i_reg        | Flip-flop |  23   |  Y  | N  | None  | None  | N  |  36  |
 |      calc_reg       | Flip-flop |   1   |  N  | N  | None  | None  | N  |  40  |
 |    out_ready_reg    | Flip-flop |   1   |  N  | N  | None  | None  | N  |  48  |
 |       out_reg       | Flip-flop | 1600  |  Y  | N  | None  | None  | N  |  64  |
 ==================================================================================
 Presto compilation completed successfully. (f_permutation)
 Module: f_permutation, Ports: 2181, Input: 579, Output: 1602, Inout: 0
-Module: f_permutation, Registers: 1613, Async set/reset: 0, Sync set/reset: 0
+Module: f_permutation, Registers: 1625, Async set/reset: 0, Sync set/reset: 0
 Information: Module f_permutation report end. (ELAB-965)
 Information: Building the design 'padder1'. (HDL-193)
 
@@ -158,16 +156,16 @@ Presto compilation completed successfully. (padder1)
 Module: padder1, Ports: 131, Input: 67, Output: 64, Inout: 0
 Module: padder1, Registers: 0, Async set/reset: 0, Sync set/reset: 0
 Information: Module padder1 report end. (ELAB-965)
-Information: Building the design 'rconst2in1'. (HDL-193)
-Presto compilation completed successfully. (rconst2in1)
-Module: rconst2in1, Ports: 140, Input: 12, Output: 128, Inout: 0
-Module: rconst2in1, Registers: 0, Async set/reset: 0, Sync set/reset: 0
-Information: Module rconst2in1 report end. (ELAB-965)
-Information: Building the design 'round2in1'. (HDL-193)
-Presto compilation completed successfully. (round2in1)
-Module: round2in1, Ports: 3328, Input: 1728, Output: 1600, Inout: 0
-Module: round2in1, Registers: 0, Async set/reset: 0, Sync set/reset: 0
-Information: Module round2in1 report end. (ELAB-965)
+Information: Building the design 'rconst'. (HDL-193)
+Presto compilation completed successfully. (rconst)
+Module: rconst, Ports: 88, Input: 24, Output: 64, Inout: 0
+Module: rconst, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Information: Module rconst report end. (ELAB-965)
+Information: Building the design 'round'. (HDL-193)
+Presto compilation completed successfully. (round)
+Module: round, Ports: 3264, Input: 1664, Output: 1600, Inout: 0
+Module: round, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Information: Module round report end. (ELAB-965)
 1
 # Link the design to ensure all references are resolved
 link
@@ -175,7 +173,7 @@ link
   Linking design 'keccak'
   Using the following designs and libraries:
   --------------------------------------------------------------------------
-  * (6 designs)               /home/cegrad/akapa006/cs220/sha3_baseline/syn/keccak.db, etc
+  * (6 designs)               /home/cegrad/akapa006/cs220/sha3_optimized/syn/keccak.db, etc
   saed32hvt_ss0p75v125c (library) /usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75v125c.db
   saed32rvt_ss0p75v125c (library) /usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_rvt/db_nldm/saed32rvt_ss0p75v125c.db
   saed32lvt_ss0p75v125c (library) /usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p75v125c.db
@@ -184,8 +182,8 @@ link
 # Flatten the hierarchy to ensure all submodules are ungrouped
 # ungroup -all -flatten -simple_names
 # Constraints
-# Clock definition: 2.5 ns period (400 MHz), 50% duty cycle
-create_clock -name "clk" -period 2.5 -waveform {0 1.25} [get_ports "clk"]
+# Clock definition: 1.6 ns period (625 MHz), 50% duty cycle
+create_clock -name "clk" -period 1.6 -waveform {0 0.8} [get_ports "clk"]
 1
 set_dont_touch_network [get_clocks "clk"]
 1
@@ -240,15 +238,15 @@ check_design
 ****************************************
 check_design summary:
 Version:     W-2024.09-SP5-4
-Date:        Tue Nov  3 20:37:44 2026
+Date:        Tue Nov 24 20:03:47 2026
 ****************************************
 
                    Name                                            Total
 --------------------------------------------------------------------------------
-Inputs/Outputs                                                    363
-    Unconnected ports (LINT-28)                                   122
-    Shorted outputs (LINT-31)                                     120
-    Constant outputs (LINT-52)                                    121
+Inputs/Outputs                                                    192
+    Unconnected ports (LINT-28)                                    65
+    Shorted outputs (LINT-31)                                      63
+    Constant outputs (LINT-52)                                     64
 
 Nets                                                             1089
     Unloaded nets (LINT-2)                                       1089
@@ -1351,120 +1349,63 @@ Warning: In design 'padder1', port 'in[3]' is not connected to any nets. (LINT-2
 Warning: In design 'padder1', port 'in[2]' is not connected to any nets. (LINT-28)
 Warning: In design 'padder1', port 'in[1]' is not connected to any nets. (LINT-28)
 Warning: In design 'padder1', port 'in[0]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_1[62]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_1[61]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_1[60]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_1[59]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_1[58]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_1[57]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_1[56]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_1[55]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_1[54]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_1[53]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_1[52]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_1[51]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_1[50]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_1[49]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_1[48]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_1[47]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_1[46]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_1[45]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_1[44]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_1[43]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_1[42]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_1[41]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_1[40]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_1[39]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_1[38]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_1[37]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_1[36]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_1[35]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_1[34]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_1[33]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_1[32]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_1[30]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_1[29]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_1[28]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_1[27]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_1[26]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_1[25]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_1[24]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_1[23]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_1[22]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_1[21]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_1[20]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_1[19]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_1[18]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_1[17]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_1[16]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_1[14]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_1[13]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_1[12]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_1[11]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_1[10]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_1[9]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_1[8]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_1[6]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_1[5]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_1[4]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_1[2]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_2[62]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_2[61]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_2[60]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_2[59]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_2[58]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_2[57]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_2[56]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_2[55]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_2[54]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_2[53]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_2[52]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_2[51]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_2[50]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_2[49]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_2[48]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_2[47]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_2[46]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_2[45]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_2[44]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_2[43]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_2[42]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_2[41]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_2[40]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_2[39]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_2[38]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_2[37]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_2[36]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_2[35]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_2[34]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_2[33]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_2[32]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_2[30]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_2[29]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_2[28]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_2[27]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_2[26]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_2[25]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_2[24]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_2[23]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_2[22]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_2[21]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_2[20]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_2[19]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_2[18]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_2[17]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_2[16]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_2[14]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_2[13]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_2[12]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_2[11]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_2[10]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_2[9]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_2[8]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_2[6]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_2[5]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_2[4]' is not connected to any nets. (LINT-28)
-Warning: In design 'round2in1', port 'round_const_2[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'round', port 'round_const[62]' is not connected to any nets. (LINT-28)
+Warning: In design 'round', port 'round_const[61]' is not connected to any nets. (LINT-28)
+Warning: In design 'round', port 'round_const[60]' is not connected to any nets. (LINT-28)
+Warning: In design 'round', port 'round_const[59]' is not connected to any nets. (LINT-28)
+Warning: In design 'round', port 'round_const[58]' is not connected to any nets. (LINT-28)
+Warning: In design 'round', port 'round_const[57]' is not connected to any nets. (LINT-28)
+Warning: In design 'round', port 'round_const[56]' is not connected to any nets. (LINT-28)
+Warning: In design 'round', port 'round_const[55]' is not connected to any nets. (LINT-28)
+Warning: In design 'round', port 'round_const[54]' is not connected to any nets. (LINT-28)
+Warning: In design 'round', port 'round_const[53]' is not connected to any nets. (LINT-28)
+Warning: In design 'round', port 'round_const[52]' is not connected to any nets. (LINT-28)
+Warning: In design 'round', port 'round_const[51]' is not connected to any nets. (LINT-28)
+Warning: In design 'round', port 'round_const[50]' is not connected to any nets. (LINT-28)
+Warning: In design 'round', port 'round_const[49]' is not connected to any nets. (LINT-28)
+Warning: In design 'round', port 'round_const[48]' is not connected to any nets. (LINT-28)
+Warning: In design 'round', port 'round_const[47]' is not connected to any nets. (LINT-28)
+Warning: In design 'round', port 'round_const[46]' is not connected to any nets. (LINT-28)
+Warning: In design 'round', port 'round_const[45]' is not connected to any nets. (LINT-28)
+Warning: In design 'round', port 'round_const[44]' is not connected to any nets. (LINT-28)
+Warning: In design 'round', port 'round_const[43]' is not connected to any nets. (LINT-28)
+Warning: In design 'round', port 'round_const[42]' is not connected to any nets. (LINT-28)
+Warning: In design 'round', port 'round_const[41]' is not connected to any nets. (LINT-28)
+Warning: In design 'round', port 'round_const[40]' is not connected to any nets. (LINT-28)
+Warning: In design 'round', port 'round_const[39]' is not connected to any nets. (LINT-28)
+Warning: In design 'round', port 'round_const[38]' is not connected to any nets. (LINT-28)
+Warning: In design 'round', port 'round_const[37]' is not connected to any nets. (LINT-28)
+Warning: In design 'round', port 'round_const[36]' is not connected to any nets. (LINT-28)
+Warning: In design 'round', port 'round_const[35]' is not connected to any nets. (LINT-28)
+Warning: In design 'round', port 'round_const[34]' is not connected to any nets. (LINT-28)
+Warning: In design 'round', port 'round_const[33]' is not connected to any nets. (LINT-28)
+Warning: In design 'round', port 'round_const[32]' is not connected to any nets. (LINT-28)
+Warning: In design 'round', port 'round_const[30]' is not connected to any nets. (LINT-28)
+Warning: In design 'round', port 'round_const[29]' is not connected to any nets. (LINT-28)
+Warning: In design 'round', port 'round_const[28]' is not connected to any nets. (LINT-28)
+Warning: In design 'round', port 'round_const[27]' is not connected to any nets. (LINT-28)
+Warning: In design 'round', port 'round_const[26]' is not connected to any nets. (LINT-28)
+Warning: In design 'round', port 'round_const[25]' is not connected to any nets. (LINT-28)
+Warning: In design 'round', port 'round_const[24]' is not connected to any nets. (LINT-28)
+Warning: In design 'round', port 'round_const[23]' is not connected to any nets. (LINT-28)
+Warning: In design 'round', port 'round_const[22]' is not connected to any nets. (LINT-28)
+Warning: In design 'round', port 'round_const[21]' is not connected to any nets. (LINT-28)
+Warning: In design 'round', port 'round_const[20]' is not connected to any nets. (LINT-28)
+Warning: In design 'round', port 'round_const[19]' is not connected to any nets. (LINT-28)
+Warning: In design 'round', port 'round_const[18]' is not connected to any nets. (LINT-28)
+Warning: In design 'round', port 'round_const[17]' is not connected to any nets. (LINT-28)
+Warning: In design 'round', port 'round_const[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'round', port 'round_const[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'round', port 'round_const[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'round', port 'round_const[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'round', port 'round_const[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'round', port 'round_const[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'round', port 'round_const[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'round', port 'round_const[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'round', port 'round_const[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'round', port 'round_const[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'round', port 'round_const[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'round', port 'round_const[2]' is not connected to any nets. (LINT-28)
 Warning: In design 'padder', output port 'buffer_full' is connected directly to output port 'out_ready'. (LINT-31)
 Warning: In design 'padder1', output port 'out[7]' is connected directly to output port 'out[1]'. (LINT-31)
 Warning: In design 'padder1', output port 'out[7]' is connected directly to output port 'out[2]'. (LINT-31)
@@ -1472,119 +1413,62 @@ Warning: In design 'padder1', output port 'out[7]' is connected directly to outp
 Warning: In design 'padder1', output port 'out[7]' is connected directly to output port 'out[4]'. (LINT-31)
 Warning: In design 'padder1', output port 'out[7]' is connected directly to output port 'out[5]'. (LINT-31)
 Warning: In design 'padder1', output port 'out[7]' is connected directly to output port 'out[6]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc2[2]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc2[4]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc2[5]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc2[6]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc2[8]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc2[9]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc2[10]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc2[11]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc2[12]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc2[13]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc2[14]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc2[16]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc2[17]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc2[18]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc2[19]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc2[20]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc2[21]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc2[22]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc2[23]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc2[24]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc2[25]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc2[26]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc2[27]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc2[28]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc2[29]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc2[30]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc2[32]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc2[33]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc2[34]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc2[35]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc2[36]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc2[37]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc2[38]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc2[39]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc2[40]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc2[41]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc2[42]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc2[43]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc2[44]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc2[45]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc2[46]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc2[47]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc2[48]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc2[49]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc2[50]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc2[51]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc2[52]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc2[53]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc2[54]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc2[55]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc2[56]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc2[57]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc2[58]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc2[59]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc2[60]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc2[61]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc2[62]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc1[2]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc1[4]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc1[5]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc1[6]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc1[8]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc1[9]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc1[10]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc1[11]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc1[12]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc1[13]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc1[14]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc1[16]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc1[17]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc1[18]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc1[19]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc1[20]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc1[21]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc1[22]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc1[23]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc1[24]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc1[25]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc1[26]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc1[27]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc1[28]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc1[29]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc1[30]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc1[32]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc1[33]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc1[34]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc1[35]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc1[36]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc1[37]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc1[38]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc1[39]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc1[40]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc1[41]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc1[42]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc1[43]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc1[44]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc1[45]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc1[46]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc1[47]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc1[48]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc1[49]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc1[50]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc1[51]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc1[52]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc1[53]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc1[54]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc1[55]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc1[56]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc1[57]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc1[58]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc1[59]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc1[60]'. (LINT-31)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to output port 'rc1[61]'. (LINT-31)
+Warning: In design 'rconst', output port 'rc[62]' is connected directly to output port 'rc[2]'. (LINT-31)
+Warning: In design 'rconst', output port 'rc[62]' is connected directly to output port 'rc[4]'. (LINT-31)
+Warning: In design 'rconst', output port 'rc[62]' is connected directly to output port 'rc[5]'. (LINT-31)
+Warning: In design 'rconst', output port 'rc[62]' is connected directly to output port 'rc[6]'. (LINT-31)
+Warning: In design 'rconst', output port 'rc[62]' is connected directly to output port 'rc[8]'. (LINT-31)
+Warning: In design 'rconst', output port 'rc[62]' is connected directly to output port 'rc[9]'. (LINT-31)
+Warning: In design 'rconst', output port 'rc[62]' is connected directly to output port 'rc[10]'. (LINT-31)
+Warning: In design 'rconst', output port 'rc[62]' is connected directly to output port 'rc[11]'. (LINT-31)
+Warning: In design 'rconst', output port 'rc[62]' is connected directly to output port 'rc[12]'. (LINT-31)
+Warning: In design 'rconst', output port 'rc[62]' is connected directly to output port 'rc[13]'. (LINT-31)
+Warning: In design 'rconst', output port 'rc[62]' is connected directly to output port 'rc[14]'. (LINT-31)
+Warning: In design 'rconst', output port 'rc[62]' is connected directly to output port 'rc[16]'. (LINT-31)
+Warning: In design 'rconst', output port 'rc[62]' is connected directly to output port 'rc[17]'. (LINT-31)
+Warning: In design 'rconst', output port 'rc[62]' is connected directly to output port 'rc[18]'. (LINT-31)
+Warning: In design 'rconst', output port 'rc[62]' is connected directly to output port 'rc[19]'. (LINT-31)
+Warning: In design 'rconst', output port 'rc[62]' is connected directly to output port 'rc[20]'. (LINT-31)
+Warning: In design 'rconst', output port 'rc[62]' is connected directly to output port 'rc[21]'. (LINT-31)
+Warning: In design 'rconst', output port 'rc[62]' is connected directly to output port 'rc[22]'. (LINT-31)
+Warning: In design 'rconst', output port 'rc[62]' is connected directly to output port 'rc[23]'. (LINT-31)
+Warning: In design 'rconst', output port 'rc[62]' is connected directly to output port 'rc[24]'. (LINT-31)
+Warning: In design 'rconst', output port 'rc[62]' is connected directly to output port 'rc[25]'. (LINT-31)
+Warning: In design 'rconst', output port 'rc[62]' is connected directly to output port 'rc[26]'. (LINT-31)
+Warning: In design 'rconst', output port 'rc[62]' is connected directly to output port 'rc[27]'. (LINT-31)
+Warning: In design 'rconst', output port 'rc[62]' is connected directly to output port 'rc[28]'. (LINT-31)
+Warning: In design 'rconst', output port 'rc[62]' is connected directly to output port 'rc[29]'. (LINT-31)
+Warning: In design 'rconst', output port 'rc[62]' is connected directly to output port 'rc[30]'. (LINT-31)
+Warning: In design 'rconst', output port 'rc[62]' is connected directly to output port 'rc[32]'. (LINT-31)
+Warning: In design 'rconst', output port 'rc[62]' is connected directly to output port 'rc[33]'. (LINT-31)
+Warning: In design 'rconst', output port 'rc[62]' is connected directly to output port 'rc[34]'. (LINT-31)
+Warning: In design 'rconst', output port 'rc[62]' is connected directly to output port 'rc[35]'. (LINT-31)
+Warning: In design 'rconst', output port 'rc[62]' is connected directly to output port 'rc[36]'. (LINT-31)
+Warning: In design 'rconst', output port 'rc[62]' is connected directly to output port 'rc[37]'. (LINT-31)
+Warning: In design 'rconst', output port 'rc[62]' is connected directly to output port 'rc[38]'. (LINT-31)
+Warning: In design 'rconst', output port 'rc[62]' is connected directly to output port 'rc[39]'. (LINT-31)
+Warning: In design 'rconst', output port 'rc[62]' is connected directly to output port 'rc[40]'. (LINT-31)
+Warning: In design 'rconst', output port 'rc[62]' is connected directly to output port 'rc[41]'. (LINT-31)
+Warning: In design 'rconst', output port 'rc[62]' is connected directly to output port 'rc[42]'. (LINT-31)
+Warning: In design 'rconst', output port 'rc[62]' is connected directly to output port 'rc[43]'. (LINT-31)
+Warning: In design 'rconst', output port 'rc[62]' is connected directly to output port 'rc[44]'. (LINT-31)
+Warning: In design 'rconst', output port 'rc[62]' is connected directly to output port 'rc[45]'. (LINT-31)
+Warning: In design 'rconst', output port 'rc[62]' is connected directly to output port 'rc[46]'. (LINT-31)
+Warning: In design 'rconst', output port 'rc[62]' is connected directly to output port 'rc[47]'. (LINT-31)
+Warning: In design 'rconst', output port 'rc[62]' is connected directly to output port 'rc[48]'. (LINT-31)
+Warning: In design 'rconst', output port 'rc[62]' is connected directly to output port 'rc[49]'. (LINT-31)
+Warning: In design 'rconst', output port 'rc[62]' is connected directly to output port 'rc[50]'. (LINT-31)
+Warning: In design 'rconst', output port 'rc[62]' is connected directly to output port 'rc[51]'. (LINT-31)
+Warning: In design 'rconst', output port 'rc[62]' is connected directly to output port 'rc[52]'. (LINT-31)
+Warning: In design 'rconst', output port 'rc[62]' is connected directly to output port 'rc[53]'. (LINT-31)
+Warning: In design 'rconst', output port 'rc[62]' is connected directly to output port 'rc[54]'. (LINT-31)
+Warning: In design 'rconst', output port 'rc[62]' is connected directly to output port 'rc[55]'. (LINT-31)
+Warning: In design 'rconst', output port 'rc[62]' is connected directly to output port 'rc[56]'. (LINT-31)
+Warning: In design 'rconst', output port 'rc[62]' is connected directly to output port 'rc[57]'. (LINT-31)
+Warning: In design 'rconst', output port 'rc[62]' is connected directly to output port 'rc[58]'. (LINT-31)
+Warning: In design 'rconst', output port 'rc[62]' is connected directly to output port 'rc[59]'. (LINT-31)
+Warning: In design 'rconst', output port 'rc[62]' is connected directly to output port 'rc[60]'. (LINT-31)
+Warning: In design 'rconst', output port 'rc[62]' is connected directly to output port 'rc[61]'. (LINT-31)
 Warning: In design 'padder1', output port 'out[7]' is connected directly to 'logic 0'. (LINT-52)
 Warning: In design 'padder1', output port 'out[6]' is connected directly to 'logic 0'. (LINT-52)
 Warning: In design 'padder1', output port 'out[5]' is connected directly to 'logic 0'. (LINT-52)
@@ -1592,120 +1476,63 @@ Warning: In design 'padder1', output port 'out[4]' is connected directly to 'log
 Warning: In design 'padder1', output port 'out[3]' is connected directly to 'logic 0'. (LINT-52)
 Warning: In design 'padder1', output port 'out[2]' is connected directly to 'logic 0'. (LINT-52)
 Warning: In design 'padder1', output port 'out[1]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc1[62]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc1[61]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc1[60]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc1[59]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc1[58]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc1[57]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc1[56]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc1[55]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc1[54]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc1[53]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc1[52]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc1[51]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc1[50]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc1[49]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc1[48]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc1[47]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc1[46]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc1[45]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc1[44]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc1[43]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc1[42]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc1[41]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc1[40]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc1[39]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc1[38]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc1[37]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc1[36]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc1[35]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc1[34]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc1[33]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc1[32]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc1[30]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc1[29]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc1[28]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc1[27]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc1[26]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc1[25]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc1[24]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc1[23]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc1[22]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc1[21]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc1[20]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc1[19]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc1[18]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc1[17]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc1[16]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc1[14]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc1[13]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc1[12]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc1[11]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc1[10]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc1[9]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc1[8]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc1[6]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc1[5]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc1[4]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc1[2]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc2[62]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc2[61]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc2[60]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc2[59]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc2[58]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc2[57]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc2[56]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc2[55]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc2[54]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc2[53]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc2[52]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc2[51]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc2[50]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc2[49]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc2[48]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc2[47]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc2[46]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc2[45]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc2[44]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc2[43]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc2[42]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc2[41]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc2[40]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc2[39]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc2[38]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc2[37]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc2[36]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc2[35]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc2[34]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc2[33]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc2[32]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc2[30]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc2[29]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc2[28]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc2[27]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc2[26]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc2[25]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc2[24]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc2[23]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc2[22]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc2[21]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc2[20]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc2[19]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc2[18]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc2[17]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc2[16]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc2[14]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc2[13]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc2[12]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc2[11]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc2[10]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc2[9]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc2[8]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc2[6]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc2[5]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc2[4]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'rconst2in1', output port 'rc2[2]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'rconst', output port 'rc[62]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'rconst', output port 'rc[61]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'rconst', output port 'rc[60]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'rconst', output port 'rc[59]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'rconst', output port 'rc[58]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'rconst', output port 'rc[57]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'rconst', output port 'rc[56]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'rconst', output port 'rc[55]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'rconst', output port 'rc[54]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'rconst', output port 'rc[53]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'rconst', output port 'rc[52]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'rconst', output port 'rc[51]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'rconst', output port 'rc[50]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'rconst', output port 'rc[49]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'rconst', output port 'rc[48]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'rconst', output port 'rc[47]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'rconst', output port 'rc[46]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'rconst', output port 'rc[45]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'rconst', output port 'rc[44]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'rconst', output port 'rc[43]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'rconst', output port 'rc[42]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'rconst', output port 'rc[41]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'rconst', output port 'rc[40]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'rconst', output port 'rc[39]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'rconst', output port 'rc[38]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'rconst', output port 'rc[37]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'rconst', output port 'rc[36]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'rconst', output port 'rc[35]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'rconst', output port 'rc[34]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'rconst', output port 'rc[33]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'rconst', output port 'rc[32]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'rconst', output port 'rc[30]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'rconst', output port 'rc[29]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'rconst', output port 'rc[28]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'rconst', output port 'rc[27]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'rconst', output port 'rc[26]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'rconst', output port 'rc[25]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'rconst', output port 'rc[24]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'rconst', output port 'rc[23]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'rconst', output port 'rc[22]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'rconst', output port 'rc[21]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'rconst', output port 'rc[20]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'rconst', output port 'rc[19]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'rconst', output port 'rc[18]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'rconst', output port 'rc[17]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'rconst', output port 'rc[16]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'rconst', output port 'rc[14]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'rconst', output port 'rc[13]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'rconst', output port 'rc[12]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'rconst', output port 'rc[11]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'rconst', output port 'rc[10]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'rconst', output port 'rc[9]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'rconst', output port 'rc[8]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'rconst', output port 'rc[6]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'rconst', output port 'rc[5]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'rconst', output port 'rc[4]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'rconst', output port 'rc[2]' is connected directly to 'logic 0'. (LINT-52)
 1
 # Perform synthesis with optimization
 compile_ultra -no_autoungroup
@@ -1713,7 +1540,7 @@ Loading db file '/usr/local/synopsys/syn/W-2024.09-SP5-4/libraries/syn/dw_founda
 Information: Failed to find dw_foundation.sldb in the user defined search_path, load it from 'Synopsys Root'. (UISN-70)
 Warning: DesignWare synthetic library dw_foundation.sldb is added to the synthetic_library in the current command. (UISN-40)
 Information: Performing leakage power optimization. (PWR-850)
-CPU Load: 50%, Ram Free: 5 GB, Swap Free: 0 GB, Work Disk Free: 3472 GB, Tmp Disk Free: 212 GB
+CPU Load: 48%, Ram Free: 95 GB, Swap Free: 3 GB, Work Disk Free: 3267 GB, Tmp Disk Free: 168 GB
 Alib files are up-to-date.
 Information: Evaluating DesignWare library utilization. (UISN-27)
 
@@ -1733,9 +1560,9 @@ Information: Evaluating DesignWare library utilization. (UISN-27)
 | Design Information                                      | Value                                  |
 ====================================================================================================
 | Number of Scenarios                                     | 0                                      |
-| Leaf Cell Count                                         | 21563                                  |
+| Leaf Cell Count                                         | 12309                                  |
 | Number of User Hierarchies                              | 5                                      |
-| Sequential Cell Count                                   | 2213                                   |
+| Sequential Cell Count                                   | 2237                                   |
 | Macro Count                                             | 0                                      |
 | Pad Count                                               | 0                                      |
 | Number of Power Domains                                 | 0                                      |
@@ -1754,7 +1581,7 @@ Information: Evaluating DesignWare library utilization. (UISN-27)
 ====================================================================================================
 Information: Sequential output inversion is enabled.  SVF file must be used for formal verification. (OPT-1208)
 
-Information: There are 1452 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+Information: There are 1281 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
 
   Simplifying Design 'keccak'
 Information: The register 'f_permutation_/out_ready_reg' will be removed. (OPT-1207)
@@ -1763,18 +1590,18 @@ Information: The register 'f_permutation_/out_ready_reg' will be removed. (OPT-1
 Loaded alib file './alib-52/saed32hvt_ss0p75v125c.db.alib'
 Loaded alib file './alib-52/saed32rvt_ss0p75v125c.db.alib' (placeholder)
 Loaded alib file './alib-52/saed32lvt_ss0p75v125c.db.alib' (placeholder)
-CPU Load: 50%, Ram Free: 4 GB, Swap Free: 0 GB, Work Disk Free: 3472 GB, Tmp Disk Free: 212 GB
+CPU Load: 47%, Ram Free: 95 GB, Swap Free: 3 GB, Work Disk Free: 3267 GB, Tmp Disk Free: 168 GB
 Information: State dependent leakage is now switched from on to off.
 
   Beginning Pass 1 Mapping
   ------------------------
-  Processing 'round2in1'
   Processing 'f_permutation'
+  Processing 'round'
   Processing 'padder'
   Processing 'keccak'
   Processing 'padder1'
-  Processing 'rconst2in1'
-CPU Load: 52%, Ram Free: 6 GB, Swap Free: 0 GB, Work Disk Free: 3472 GB, Tmp Disk Free: 212 GB
+  Processing 'rconst'
+CPU Load: 47%, Ram Free: 95 GB, Swap Free: 3 GB, Work Disk Free: 3267 GB, Tmp Disk Free: 168 GB
 
   Updating timing information
 Information: Updating design information... (UID-85)
@@ -1810,40 +1637,22 @@ Threshold voltage group cell usage:
   Mapping Optimization (Phase 1)
   Mapping Optimization (Phase 2)
   Mapping Optimization (Phase 3)
-  Mapping Optimization (Phase 4)
-  Mapping Optimization (Phase 5)
-  Mapping Optimization (Phase 6)
-  Mapping Optimization (Phase 7)
-  Mapping Optimization (Phase 8)
-  Mapping Optimization (Phase 9)
-  Mapping Optimization (Phase 10)
-  Mapping Optimization (Phase 11)
-  Mapping Optimization (Phase 12)
-  Mapping Optimization (Phase 13)
-  Mapping Optimization (Phase 14)
-  Mapping Optimization (Phase 15)
-  Mapping Optimization (Phase 16)
-  Mapping Optimization (Phase 17)
-  Mapping Optimization (Phase 18)
-  Mapping Optimization (Phase 19)
-  Mapping Optimization (Phase 20)
-  Mapping Optimization (Phase 21)
 
                                   TOTAL                                                
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:05:27  107787.0      0.04       1.6     273.8                           18503413760.0000
-    0:05:33  107597.2      0.14      83.4     379.6                           18464946176.0000
+    0:02:02   56643.9      0.02      16.2     199.8                           10086005760.0000
+    0:02:03   56620.0      0.02      16.2     199.8                           10081725440.0000
 
 Threshold voltage group cell usage:
->> saed32cell_hvt 0.04%, saed32cell_lvt 99.69%, saed32cell_svt 0.27%
+>> saed32cell_hvt 0.05%, saed32cell_lvt 99.49%, saed32cell_svt 0.46%
 
   Beginning Constant Register Removal
   -----------------------------------
 
 Threshold voltage group cell usage:
->> saed32cell_hvt 0.04%, saed32cell_lvt 99.69%, saed32cell_svt 0.27%
+>> saed32cell_hvt 0.05%, saed32cell_lvt 99.49%, saed32cell_svt 0.46%
 
   Beginning Global Optimizations
   ------------------------------
@@ -1881,139 +1690,134 @@ Threshold voltage group cell usage:
   Global Optimization (Phase 30)
 
 Threshold voltage group cell usage:
->> saed32cell_hvt 0.44%, saed32cell_lvt 99.53%, saed32cell_svt 0.04%
+>> saed32cell_hvt 49.63%, saed32cell_lvt 46.80%, saed32cell_svt 3.57%
 
   Beginning Isolate Ports
   -----------------------
 
 Threshold voltage group cell usage:
->> saed32cell_hvt 0.44%, saed32cell_lvt 99.53%, saed32cell_svt 0.04%
+>> saed32cell_hvt 49.63%, saed32cell_lvt 46.80%, saed32cell_svt 3.57%
 
   Beginning Delay Optimization
   ----------------------------
-    0:05:50  104094.6     21.44    4933.5     528.8                           17671004160.0000
-    0:05:57  104129.2      0.00      -0.0     543.7                           17744203776.0000
-    0:05:57  104129.2      0.00      -0.0     543.7                           17744203776.0000
-    0:05:57  104092.3      0.00      -0.0     543.7                           17710295040.0000
+    0:02:10   54722.5     13.58   17231.9     712.4                           4739536384.0000
+    0:02:13   54748.0     11.53   13269.0     746.5                           5525723648.0000
+    0:02:13   54748.0     11.53   13269.0     746.5                           5525723648.0000
+    0:02:14   54681.1     11.52   13269.1     779.4                           5459207168.0000
 
 Threshold voltage group cell usage:
->> saed32cell_hvt 0.03%, saed32cell_lvt 99.85%, saed32cell_svt 0.12%
-    0:06:02  104092.3      0.00      -0.0     543.7                           17710295040.0000
-    0:06:07  104092.3      0.00       0.0     543.7                           17710295040.0000
+>> saed32cell_hvt 42.92%, saed32cell_lvt 53.18%, saed32cell_svt 3.90%
+    0:02:16   54681.1     11.52   13269.1     779.4                           5459207168.0000
+    0:02:17   54639.7     11.52   13265.6     779.4                           5457009152.0000
 
   Beginning WLM Backend Optimization
   --------------------------------------
-    0:06:15  103907.0      0.00       0.0     539.8                           17466531840.0000
-    0:06:19  103901.9      0.00       0.0     539.8                           17466015744.0000
-    0:06:19  103901.9      0.00       0.0     539.8                           17466015744.0000
-    0:06:19  103901.9      0.00       0.0     539.8                           17466015744.0000
-    0:06:19  103901.9      0.00       0.0     539.8                           17466015744.0000
-    0:06:19  103901.9      0.00       0.0     539.8                           17466015744.0000
-    0:06:23  103424.7      0.00       0.0     518.5                           16672708608.0000
-    0:06:23  103424.7      0.00       0.0     518.5                           16672708608.0000
-    0:06:23  103424.7      0.00       0.0     518.5                           16672708608.0000
-    0:06:23  103424.7      0.00       0.0     518.5                           16672708608.0000
-    0:06:23  103424.7      0.00       0.0     518.5                           16672708608.0000
-    0:06:23  103424.7      0.00       0.0     518.5                           16672708608.0000
-    0:06:23  103424.7      0.00       0.0     518.5                           16672708608.0000
-    0:06:23  103424.7      0.00       0.0     518.5                           16672708608.0000
-    0:06:23  103424.7      0.00       0.0     518.5                           16672708608.0000
-    0:06:23  103424.7      0.00       0.0     518.5                           16672708608.0000
-    0:06:23  103424.7      0.00       0.0     518.5                           16672708608.0000
-    0:06:23  103424.7      0.00       0.0     518.5                           16672708608.0000
-    0:06:23  103424.7      0.00       0.0     518.5                           16672708608.0000
-    0:06:23  103424.7      0.00       0.0     518.5                           16672708608.0000
-    0:06:23  103424.7      0.00       0.0     518.5                           16672708608.0000
-    0:06:23  103424.7      0.00       0.0     518.5                           16672708608.0000
-    0:06:23  103424.7      0.00       0.0     518.5                           16672708608.0000
-    0:06:23  103424.7      0.00       0.0     518.5                           16672708608.0000
-    0:06:23  103424.7      0.00       0.0     518.5                           16672708608.0000
+    0:02:24   54426.7     11.52   12906.5     743.3                           5543490048.0000
+    0:02:30   54414.0      5.97    6789.7     849.2                           6759974912.0000
+    0:02:37   54272.2      3.49    4034.3     944.5                           7650853376.0000
+    0:02:43   54212.5      1.80    1530.2     914.1                           8431867904.0000
+    0:02:46   53493.2      1.80    1166.9     840.3                           8607933440.0000
+    0:02:49   53479.5      1.80    1160.9     840.3                           8625926144.0000
+    0:02:52   53475.5      1.80    1156.2     802.4                           8630928384.0000
+    0:02:55   53499.6      1.80    1153.1     802.4                           8690002944.0000
+    0:02:55   53499.6      1.80    1153.1     802.4                           8690002944.0000
+LIM: unable to initialize... shutting down forever
+    0:02:56   53499.6      0.50     407.9     802.7                           8975680512.0000
+    0:02:56   53499.6      0.50     407.9     802.7                           8975680512.0000
+    0:02:57   52721.2      0.40     267.3     571.7                           8863004672.0000
+    0:02:57   52721.2      0.40     267.3     571.7                           8863004672.0000
+    0:03:16   53050.0      0.09     102.9     570.9                           8959879168.0000
+    0:03:16   53050.0      0.09     102.9     570.9                           8959879168.0000
+    0:03:16   53053.6      0.08      91.1     570.9                           8963847168.0000
+    0:03:16   53053.6      0.08      91.1     570.9                           8963847168.0000
+    0:03:25   53093.5      0.07      75.9     573.4                           8990201856.0000
+    0:03:25   53093.5      0.07      75.9     573.4                           8990201856.0000
+    0:03:29   53131.6      0.06      68.5     576.5                           9027025920.0000
+    0:03:29   53131.6      0.06      68.5     576.5                           9027025920.0000
+    0:03:38   53285.1      0.05      56.6     577.8                           9060075520.0000
+    0:03:38   53285.1      0.05      56.6     577.8                           9060075520.0000
+    0:04:30   53226.1      0.01       3.5     693.1                           9239513088.0000
+    0:04:30   53226.1      0.01       3.5     693.1                           9239513088.0000
+    0:04:36   53231.0      0.01       3.4     693.1                           9238715392.0000
+    0:04:36   53231.0      0.01       3.4     693.1                           9238715392.0000
+    0:05:14   53220.8      0.01       0.8     510.4                           9256351744.0000
+    0:05:14   53220.8      0.01       0.8     510.4                           9256351744.0000
+    0:05:23   53242.4      0.00       0.7     510.6                           9256217600.0000
 
 
-  Beginning Design Rule Fixing  (max_transition)  (max_capacitance)
+  Beginning Design Rule Fixing  (max_capacitance)
   ----------------------------
 
                                   TOTAL                                                
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:06:23  103424.7      0.00       0.0     518.5                           16672708608.0000
+    0:05:23   53242.4      0.00       0.7     510.6                           9256217600.0000
   Global Optimization (Phase 31)
   Global Optimization (Phase 32)
   Global Optimization (Phase 33)
-    0:06:27  103480.6      0.00       0.0       0.0                           16665572352.0000
-    0:06:27  103480.6      0.00       0.0       0.0                           16665572352.0000
-    0:06:27  103480.6      0.00       0.0       0.0                           16665572352.0000
-    0:06:27  103480.6      0.00       0.0       0.0                           16665572352.0000
-    0:06:27  103480.6      0.00       0.0       0.0                           16665572352.0000
-    0:06:35  103084.6      0.00       0.0       0.0                           13124675584.0000
-    0:06:35  103084.6      0.00       0.0       0.0                           13124675584.0000
-    0:06:35  103084.6      0.00       0.0       0.0                           13124675584.0000
-    0:06:35  103084.6      0.00       0.0       0.0                           13124675584.0000
-    0:06:35  103084.6      0.00       0.0       0.0                           13124675584.0000
-    0:06:35  103084.6      0.00       0.0       0.0                           13124675584.0000
-    0:06:35  103084.6      0.00       0.0       0.0                           13124675584.0000
-    0:06:35  103084.6      0.00       0.0       0.0                           13124675584.0000
-    0:06:35  103084.6      0.00       0.0       0.0                           13124675584.0000
-    0:06:35  103084.6      0.00       0.0       0.0                           13124675584.0000
-    0:06:35  103084.6      0.00       0.0       0.0                           13124675584.0000
-    0:06:35  103084.6      0.00       0.0       0.0                           13124675584.0000
-    0:06:35  103084.6      0.00       0.0       0.0                           13124675584.0000
-    0:06:35  103084.6      0.00       0.0       0.0                           13124675584.0000
-    0:06:35  103084.6      0.00       0.0       0.0                           13124675584.0000
-    0:06:35  103084.6      0.00       0.0       0.0                           13124675584.0000
-    0:06:35  103084.6      0.00       0.0       0.0                           13124675584.0000
-    0:06:35  103084.6      0.00       0.0       0.0                           13124675584.0000
-    0:06:35  103084.6      0.00       0.0       0.0                           13124675584.0000
+    0:05:30   53261.7      0.00       0.5       0.0                           9260362752.0000
+    0:05:40   53290.7      0.00       0.4       0.0                           9263932416.0000
+    0:05:42   53290.7      0.00       0.4       0.0                           9263932416.0000
+    0:05:50   53290.7      0.00       0.4       0.0                           9263932416.0000
+    0:05:50   53290.7      0.00       0.4       0.0                           9263932416.0000
+    0:05:53   52930.6      0.00       0.9       0.0                           8750438400.0000
+    0:05:53   52930.6      0.00       0.9       0.0                           8750438400.0000
+    0:06:08   52959.0      0.00       0.6       0.0                           8761438208.0000
+    0:06:08   52959.0      0.00       0.6       0.0                           8761438208.0000
+    0:06:08   52959.0      0.00       0.6       0.0                           8761438208.0000
+    0:06:08   52959.0      0.00       0.6       0.0                           8761438208.0000
+    0:06:18   52959.0      0.00       0.6       0.0                           8761438208.0000
+    0:06:18   52959.0      0.00       0.6       0.0                           8761438208.0000
+    0:06:55   52924.5      0.00       0.1       0.5                           8791869440.0000
+    0:06:55   52924.5      0.00       0.1       0.5                           8791869440.0000
+    0:07:03   52993.1      0.00       0.0       0.5                           8796252160.0000
+    0:07:03   52993.1      0.00       0.0       0.5                           8796252160.0000
+    0:08:21   52971.5      0.00       0.0       0.7                           8807657472.0000
+    0:08:21   52971.5      0.00       0.0       0.7                           8807657472.0000
+    0:08:43   52997.2      0.00       0.0       0.7                           8810690560.0000
+    0:08:43   52997.2      0.00       0.0       0.7                           8810690560.0000
+    0:09:52   52992.8      0.00       0.0       0.7                           8810418176.0000
+    0:09:52   52992.8      0.00       0.0       0.7                           8810418176.0000
+    0:10:40   52992.8      0.00       0.0       0.7                           8810418176.0000
 
                                   TOTAL                                                
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:06:37  103084.6      0.00       0.0       0.0                           13124675584.0000
-    0:06:40  102867.8      0.03       0.8       0.0                           13072793600.0000
-    0:06:43  102864.3      0.01       0.2       0.0                           13074492416.0000
-    0:06:46  102860.0      0.01       0.3       0.0                           13073426432.0000
-    0:06:50  102838.6      0.01       0.2       0.0                           13072550912.0000
-    0:06:50  102838.6      0.01       0.2       0.0                           13072550912.0000
-    0:06:54  102724.8      0.01       0.6       0.0                           12659639296.0000
+    0:10:41   52992.8      0.00       0.0       0.7                           8810418176.0000
+    0:10:44   51704.1      0.05      22.5       0.3                           8558427648.0000
+    0:10:47   51686.0      0.03      15.7       0.3                           8556263936.0000
+    0:10:49   51665.7      0.03      10.0       0.3                           8554591232.0000
+    0:10:50   51664.4      0.03       9.9       0.3                           8554562048.0000
+    0:10:50   51664.4      0.03       9.9       0.3                           8554562048.0000
+    0:10:52   51606.0      0.03      10.2       0.3                           8435953152.0000
 
 Threshold voltage group cell usage:
->> saed32cell_hvt 0.38%, saed32cell_lvt 64.59%, saed32cell_svt 35.03%
+>> saed32cell_hvt 0.97%, saed32cell_lvt 84.26%, saed32cell_svt 14.77%
 
   Beginning Delay Optimization HSVT Pass
   --------------------------------------
-    0:06:56  102724.8      0.01       0.6       0.0                           12659639296.0000
-    0:06:56  102724.8      0.01       0.6       0.0                           12659639296.0000
-    0:06:56  102724.8      0.01       0.6       0.0                           12659639296.0000
-    0:21:50  102723.2      0.00       0.0       0.6                           12659528704.0000
-    0:21:52  102723.2      0.00       0.0       0.6                           12659528704.0000
-    0:21:52  102723.2      0.00       0.0       0.6                           12659528704.0000
-    0:21:52  102723.2      0.00       0.0       0.6                           12659528704.0000
-    0:23:03  102695.8      0.00       0.0       1.3                           12656518144.0000
-    0:23:08  102677.7      0.00       0.0       1.3                           12597008384.0000
-    0:23:10  102679.3      0.00       0.0       0.6 f_permutation_/out_reg[69]/D 12579898368.0000
-    0:23:13  102678.8      0.00       0.0       0.0 f_permutation_/round_/net142820 12581762048.0000
-    0:23:15  102678.8      0.00       0.0       0.0                           12581762048.0000
-    0:23:47  102675.4      0.00       0.0       0.0                           12585749504.0000
-    0:23:47  102675.4      0.00       0.0       0.0                           12585749504.0000
-    0:24:03  102675.4      0.00       0.0       0.0                           12585749504.0000
-
-Threshold voltage group cell usage:
->> saed32cell_hvt 0.47%, saed32cell_lvt 64.26%, saed32cell_svt 35.27%
-
-  Beginning Delay Optimization
-  ----------------------------
-    0:24:03  102675.4      0.00       0.0       0.0                           12585749504.0000
-    0:24:19  102675.4      0.00       0.0       0.0                           12585749504.0000
-    0:24:19  102675.4      0.00       0.0       0.0                           12585749504.0000
-    0:24:34  102675.4      0.00       0.0       0.0                           12585749504.0000
-    0:24:34  102675.4      0.00       0.0       0.0                           12585749504.0000
-    0:24:34  102675.2      0.00       0.0       0.0                           12586035200.0000
-    0:24:34  102675.2      0.00       0.0       0.0                           12586035200.0000
-    0:24:34  102675.2      0.00       0.0       0.0                           12586035200.0000
-    0:24:39  102472.6      0.00       0.0       0.0                           12456527872.0000
-CPU Load: 55%, Ram Free: 5 GB, Swap Free: 0 GB, Work Disk Free: 3472 GB, Tmp Disk Free: 212 GB
+    0:10:53   51606.0      0.03      10.2       0.3                           8435953152.0000
+    0:10:53   51606.0      0.03      10.2       0.3                           8435953152.0000
+    0:10:53   51606.0      0.03      10.2       0.3                           8435953152.0000
+    0:31:20   51604.7      0.03      10.5       0.4                           8435923968.0000
+    0:31:22   51604.7      0.03      10.5       0.4                           8435923968.0000
+    0:31:22   51604.7      0.03      10.5       0.4                           8435923968.0000
+    0:31:22   51604.7      0.03      10.5       0.4                           8435923968.0000
+    0:35:37   51604.7      0.03      10.3       0.4                           8435923968.0000
+    0:35:50   51512.2      0.02      11.1       0.4 f_permutation_/out_reg[673]/D 8375454720.0000
+    0:35:53   51718.3      0.02       9.9       0.4 f_permutation_/out_reg[40]/D 8415794688.0000
+    0:35:57   51842.3      0.02       7.7       0.4 f_permutation_/out_reg[622]/D 8444073472.0000
+    0:36:04   51865.5      0.01       2.3       0.0 f_permutation_/out_reg[457]/D 8446769152.0000
+    0:36:10   51867.7      0.00       0.4       0.0                           8446667776.0000
+    0:36:31   51915.0      0.00       0.0       0.0                           8493139968.0000
+    0:36:31   51915.0      0.00       0.0       0.0                           8493139968.0000
+    0:36:31   51914.8      0.00       0.0       0.0                           8492631552.0000
+    0:36:32   51914.8      0.00       0.0       0.0                           8492631552.0000
+    0:36:32   51914.8      0.00       0.0       0.0                           8492631552.0000
+    0:36:34   51531.3      0.00       0.0       0.0                           8171528192.0000
+CPU Load: 68%, Ram Free: 93 GB, Swap Free: 3 GB, Work Disk Free: 3271 GB, Tmp Disk Free: 168 GB
 Loading db file '/usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75v125c.db'
 Loading db file '/usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_rvt/db_nldm/saed32rvt_ss0p75v125c.db'
 Loading db file '/usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p75v125c.db'
@@ -2025,10 +1829,10 @@ Note: Symbol # after min delay cost means estimated hold TNS across all active s
   Optimization Complete
   ---------------------
 Warning: Design 'keccak' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
-     Net 'f_permutation_/clk': 2212 load(s), 1 driver(s)
+     Net 'f_permutation_/clk': 2236 load(s), 1 driver(s)
 Information: State dependent leakage is now switched from off to on.
 Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
-CPU Load: 54%, Ram Free: 4 GB, Swap Free: 0 GB, Work Disk Free: 3472 GB, Tmp Disk Free: 212 GB
+CPU Load: 66%, Ram Free: 92 GB, Swap Free: 3 GB, Work Disk Free: 3271 GB, Tmp Disk Free: 168 GB
 Information: Total number of MV cells in the design.
 ----------------------------------------------------------------------------------------------------
  MV Cells                                           Total Number                                   
@@ -2057,13 +1861,13 @@ write -format ddc -hierarchy -output "${DESIGN_NAME}_synthesized.ddc"
 Writing ddc file 'keccak_synthesized.ddc'.
 1
 write -format verilog -hierarchy -output "${DESIGN_NAME}_synthesized.v"
-Writing verilog file '/home/cegrad/akapa006/cs220/sha3_baseline/syn/keccak_synthesized.v'.
+Writing verilog file '/home/cegrad/akapa006/cs220/sha3_optimized/syn/keccak_synthesized.v'.
 1
 write_sdc -nosplit "${DESIGN_NAME}_const.sdc"
 1
 write_sdf "${DESIGN_NAME}_const.sdf"
 Information: Annotated 'cell' delays are assumed to include load delay. (UID-282)
-Information: Writing timing information to file '/home/cegrad/akapa006/cs220/sha3_baseline/syn/keccak_const.sdf'. (WT-3)
+Information: Writing timing information to file '/home/cegrad/akapa006/cs220/sha3_optimized/syn/keccak_const.sdf'. (WT-3)
 Information: Updating design information... (UID-85)
 Warning: Design 'keccak' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
 1
@@ -2077,9 +1881,9 @@ report_constraint -all_violators > reports/${DESIGN_NAME}_violators.log
 # Exit the synthesis tool
 exit
 
-Memory usage for this session 587 Mbytes.
-Memory usage for this session including child processes 851 Mbytes.
-CPU usage for this session 1484 seconds ( 0.41 hours ).
-Elapsed time for this session 1505 seconds ( 0.42 hours ).
+Memory usage for this session 490 Mbytes.
+Memory usage for this session including child processes 507 Mbytes.
+CPU usage for this session 2190 seconds ( 0.61 hours ).
+Elapsed time for this session 2216 seconds ( 0.62 hours ).
 
 Thank you...

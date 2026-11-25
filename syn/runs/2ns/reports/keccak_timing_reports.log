@@ -1,0 +1,99 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nets
+        -max_paths 1
+        -transition_time
+Design : keccak
+Version: W-2024.09-SP5-4
+Date   : Tue Nov 24 18:58:50 2026
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: ss0p75v125c   Library: saed32hvt_ss0p75v125c
+Wire Load Model Mode: enclosed
+
+  Startpoint: padder_/i_reg_8_
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: f_permutation_/out_reg_1483_
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  keccak             70000                 saed32hvt_ss0p75v125c
+  f_permutation      70000                 saed32hvt_ss0p75v125c
+  round              35000                 saed32hvt_ss0p75v125c
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout     Trans      Incr       Path      Attributes
+  ---------------------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                             0.00       0.00
+  clock network delay (ideal)                                       0.00       0.00
+  padder_/i_reg_8_/CLK (DFFSSRX2_LVT)                     0.00      0.00 #     0.00 r
+  padder_/i_reg_8_/QN (DFFSSRX2_LVT)                      0.07      0.13       0.13 f
+  padder_/out_ready (net)                       4                   0.00       0.13 f
+  padder_/out_ready (padder)                                        0.00       0.13 f
+  padder_out_ready (net)                                            0.00       0.13 f
+  f_permutation_/in_ready (f_permutation)                           0.00       0.13 f
+  f_permutation_/in_ready (net)                                     0.00       0.13 f
+  f_permutation_/U1862/Y (AND2X2_LVT)                     0.05      0.11       0.24 f
+  f_permutation_/ack (net)                      6                   0.00       0.24 f
+  f_permutation_/U3949/Y (INVX4_LVT)                      0.05      0.05       0.30 r
+  f_permutation_/n5076 (net)                    1                   0.00       0.30 r
+  f_permutation_/U4620/Y (INVX16_LVT)                     0.04      0.03       0.33 f
+  f_permutation_/n5077 (net)                    2                   0.00       0.33 f
+  f_permutation_/U1397/Y (INVX32_LVT)                     0.07      0.06       0.39 r
+  f_permutation_/n1119 (net)                  131                   0.00       0.39 r
+  f_permutation_/U4590/Y (OR2X1_LVT)                      0.04      0.07       0.46 r
+  f_permutation_/n5042 (net)                    1                   0.00       0.46 r
+  f_permutation_/U4591/Y (XNOR2X1_LVT)                    0.06      0.14       0.60 r
+  f_permutation_/round_in[1333] (net)           2                   0.00       0.60 r
+  f_permutation_/round_/in[1333] (round)                            0.00       0.60 r
+  f_permutation_/round_/in[1333] (net)                              0.00       0.60 r
+  f_permutation_/round_/U187/Y (XOR3X1_LVT)               0.07      0.09       0.69 f
+  f_permutation_/round_/n97 (net)               1                   0.00       0.69 f
+  f_permutation_/round_/U88/Y (XOR3X1_LVT)                0.08      0.12       0.81 r
+  f_permutation_/round_/n293 (net)              2                   0.00       0.81 r
+  f_permutation_/round_/U1181/Y (XNOR2X2_LVT)             0.07      0.16       0.97 r
+  f_permutation_/round_/n3043 (net)             5                   0.00       0.97 r
+  f_permutation_/round_/U1182/Y (XNOR2X2_RVT)             0.07      0.18       1.16 f
+  f_permutation_/round_/n5140 (net)             3                   0.00       1.16 f
+  f_permutation_/round_/U1183/Y (NAND2X0_RVT)             0.10      0.10       1.26 r
+  f_permutation_/round_/n294 (net)              1                   0.00       1.26 r
+  f_permutation_/round_/U1184/Y (XNOR2X1_RVT)             0.07      0.24       1.50 r
+  f_permutation_/round_/out[1483] (net)         1                   0.00       1.50 r
+  f_permutation_/round_/out[1483] (round)                           0.00       1.50 r
+  f_permutation_/round_out[1483] (net)                              0.00       1.50 r
+  f_permutation_/U1089/Y (INVX1_HVT)                      0.13      0.12       1.62 f
+  f_permutation_/n1611 (net)                    1                   0.00       1.62 f
+  f_permutation_/U3224/Y (OAI22X1_LVT)                    0.03      0.13       1.75 r
+  f_permutation_/n2299 (net)                    1                   0.00       1.75 r
+  f_permutation_/out_reg_1483_/D (DFFX1_LVT)              0.03      0.00       1.75 r
+  data arrival time                                                            1.75
+
+  clock clk (rise edge)                                             2.00       2.00
+  clock network delay (ideal)                                       0.00       2.00
+  clock uncertainty                                                -0.20       1.80
+  f_permutation_/out_reg_1483_/CLK (DFFX1_LVT)                      0.00       1.80 r
+  library setup time                                               -0.05       1.75
+  data required time                                                           1.75
+  ---------------------------------------------------------------------------------------------------------
+  data required time                                                           1.75
+  data arrival time                                                           -1.75
+  ---------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                  0.00
+
+
+1
